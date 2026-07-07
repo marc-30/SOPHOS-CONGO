@@ -1,0 +1,10 @@
+<div>
+    <h2>Nouveau message de contact</h2>
+
+    <p><strong>Nom :</strong> {{ $data['fullname'] }}</p>
+    <p><strong>Email :</strong> {{ $data['email'] }}</p>
+    <p><strong>Sujet :</strong> {{ $data['subject'] }}</p>
+
+    <p><strong>Message :</strong></p>
+    <p>{{ $data['message'] }}</p>
+</div>

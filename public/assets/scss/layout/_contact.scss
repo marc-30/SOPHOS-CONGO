@@ -1,0 +1,58 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Contact CSS
+----------------------------------------*/
+
+.contact-item{
+    background-color: var(--cp-color-bg-2);
+    border: 1px solid var(--cp-color-border-1);
+    padding: 30px;
+    border-radius: 8px;
+    @include breakpoint(sm){
+        padding: 30px 20px;
+    }
+    .icon{
+        margin-bottom: 80px;
+    }
+    .contact-content{
+        span{
+            line-height: 1;
+            font-size: 16px;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .title{
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.blog-contact-form.form-2{
+    background-color: var(--cp-color-bg-2);
+    padding: 55px;
+    border: 1px solid var(--cp-color-border-1);
+    border-radius: 16px;
+    @include breakpoint(sm){
+        padding: 40px 20px;
+    }
+    .request-form{
+        .form-item{
+            .form-control{
+                background-color: var(--cp-color-bg-1);
+                border-radius: 6px;
+            }
+        }
+    }
+}
+.map-wrapper{
+    iframe{
+        border-radius: 16px;
+    }
+}
+
+/* !END: Theme Contact CSS */

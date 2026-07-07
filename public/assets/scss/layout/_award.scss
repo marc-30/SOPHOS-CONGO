@@ -1,0 +1,60 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Award CSS
+----------------------------------------*/
+
+.award-section{
+    background-color: var(--cp-color-bg-2);
+    overflow: hidden;
+}
+
+.award-img{
+    max-width: 420px;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    .img-overlay{
+        background-color: var(--cp-color-bg-2);
+    }
+    .award-main-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+}
+
+.award-list{
+    padding-left: 40px;
+    @include breakpoint(md){
+        margin-top: 40px;
+        padding-left: 0;
+    }
+    li{
+        @include flex-vertical-center;
+        justify-content: space-between;
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--cp-color-border-1);
+        &:not(:last-of-type){
+            margin-bottom: 40px;
+        }
+        &:nth-child(1){
+            padding-top: 40px;
+            border-top: 1px solid var(--cp-color-border-1);
+        }
+        span{
+            font-family: var(--cp-ff-heading);
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1;
+            display: block;
+            @include breakpoint(sm){
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+/* !END: Award CSS */

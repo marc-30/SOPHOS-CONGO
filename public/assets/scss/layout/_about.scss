@@ -1,0 +1,232 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: About CSS
+----------------------------------------*/
+
+.about-img{
+    max-width: 534px;
+    width: 100%;
+    height: 100%;
+    @include breakpoint(sm){
+        height: 450px;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .img-overlay{
+        background-color: var(--cp-color-bg-1);
+    }
+}
+
+.about-content{
+    @include breakpoint(md){
+        margin-top: 50px;
+    }
+    p{
+        font-size: 24px;
+        font-weight: 200;
+        margin-bottom: 0;
+        line-height: 38px;
+    }
+    .about-item-wrap{
+        background-color: var(--cp-color-bg-2);
+        max-width: 600px;
+        width: 100%;
+        @include flex-vertical-center;
+        border: 1px solid var(--cp-color-border-1);
+        padding: 35px 40px;
+        border-radius: 8px;
+        margin: 40px 0;
+        @include breakpoint(sm){
+            flex-direction: column;
+            row-gap: 30px;
+            align-items: baseline;
+        }
+        .about-item{
+            .icon{
+                margin-bottom: 20px;
+            }
+            &:not(:last-of-type){
+                margin-right: 70px;
+                padding-right: 70px;
+                border-right: 1px solid var(--cp-color-border-1);
+                @include breakpoint(sm){
+                    padding-right: 0;
+                    margin-right: 0;
+                    border: none;
+                }
+            }
+            .title{
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.sponsor-title{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0;
+    @include breakpoint(md){
+        margin-bottom: 30px;
+    }
+    span{
+        color: var(--cp-color-theme-primary);
+    }
+}
+
+// About 2
+
+.about-carousel{
+    max-width: 260px;
+    margin-left: 0;
+    padding-top: 60px;
+    padding-right: 0px;
+    margin-right: 60px;
+    border-right: 1px solid var(--cp-color-border-1);
+    padding-bottom: 60px;
+    @include breakpoint(lg){
+        padding-right: 40px;
+        margin-right: 40px;
+    }
+    @include breakpoint(sm){
+        margin-right: 0;
+        padding-right: 0;
+        border: none;
+    }
+    .swiper-pagination{
+        text-align: left;
+        bottom: 0;
+        .swiper-pagination-bullet{
+            height: 6px;
+            width: 16px;
+            background-color: var(--cp-color-common-white);
+            border-radius: 100px;
+            opacity: 1;
+            @include transition(all 0.3s ease-in-out);
+            &.swiper-pagination-bullet-active{
+                width: 40px;
+                background-color: var(--cp-color-theme-primary);
+            }
+        }
+    }
+}
+
+.about-content-2{
+    @include breakpoint(md){
+        margin-bottom: 40px;
+    }
+    .about-exp-box{
+        display: flex;
+        align-items: end;
+        border-top: 1px solid var(--cp-color-border-1);
+        @include breakpoint(sm){
+            flex-direction: column;
+            row-gap: 40px;
+            align-items: baseline;
+        }
+        .exp-year{
+            .title{
+                font-family: var(--cp-ff-heading);
+                font-size: 120px;
+                font-weight: 500;
+                display: flex;
+                position: relative;
+                line-height: 1;
+                margin-bottom: 20px;
+                @include breakpoint(lg){
+                    font-size: 70px;
+                }
+                .odometer-auto-theme{
+                    line-height: 1;
+                    font-family: inherit;
+                }
+                .icon{
+                    transform: translateY(15px);
+                    font-size: 30px;
+                    display: block;
+                    color: var(--cp-color-theme-primary);
+                }
+            }
+            p{
+                font-size: 24px;
+                font-weight: 500;
+                margin-bottom: 0px;
+                @include breakpoint(lg){
+                    font-size: 20px;
+                }
+            }
+            .line{
+                background-color: var(--cp-color-theme-primary);
+                height: 6px;
+                width: 40px;
+                border-radius: 30px;
+                margin-left: 25px;
+                position: relative;
+                &:before{
+                    background-color: var(--cp-color-common-white);
+                    content: "";
+                    width: 16px;
+                    height: 6px;
+                    border-radius: 30px;
+                    position: absolute;
+                    top: 0;
+                    left: -25px;
+                }
+            }
+        }
+        .exp-content{
+            max-width: 430px;
+            width: 100%;
+            p{
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 1.6;
+                margin-bottom: 40px;
+                @include breakpoint(lg){
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+.about-img-2{
+    max-width: 460px;
+    width: 100%;
+    height: 590px;
+    margin-left: auto;
+    @include breakpoint(md){
+        margin: 0 auto;
+        height: 450px;
+    }
+}
+
+// About Sponsor
+
+.about-sponsor-wrap{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid var(--cp-color-border-1);
+    @include breakpoint(sm){
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-sponsor-item{
+    text-align: center;
+    padding: 60px 20px;
+    &:not(:last-of-type){
+        border-right: 1px solid var(--cp-color-border-1);
+        @include breakpoint(sm){
+            border-right: none;
+            border-bottom: 1px solid var(--cp-color-border-1);
+        }
+    }
+}
+
+/* !END: About CSS */
