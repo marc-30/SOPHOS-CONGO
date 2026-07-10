@@ -1,5 +1,8 @@
 <!-- resources/views/home.blade.php -->
-<x-layout title="Accueil">
+<x-layout
+    title="Sophos Congo — Cabinet de Transformation Digitale, Communication & IA à Brazzaville"
+    description="Sophos Congo est un cabinet de transformation digitale et d'intelligence artificielle à Brazzaville : conseil stratégique, communication institutionnelle, nation branding, création de contenus et formation."
+>
     <!-- Preloader -->
     <div id="preloader">
         <div id="container" class="container-preloader">
@@ -39,11 +42,11 @@
                 <ul class="side-menu-list">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Abidjan, Cocody, Angré cité sir, </p>
+                        <p>Ravin du Tchad, Plateau, Brazzaville, </p>
                     </li>
                     <li>
                         <i class="fas fa-phone"></i>
-                        <a href="tel:+2250716119095">+225 07 16 119 095</a>
+                        <a href="tel:+242067768642">+242 06 776 86 42</a>
                     </li>
                     <li>
                         <i class="fas fa-envelope-open-text"></i>
@@ -66,74 +69,6 @@
         .hero-video-box {
             position: relative;
         }
-        /* Gradient plus dense pour lisibilité sur toute la hauteur */
-        .hero-video-box::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to top,
-                rgba(0,0,0,0.92) 0%,
-                rgba(0,0,0,0.70) 35%,
-                rgba(0,0,0,0.35) 65%,
-                rgba(0,0,0,0.08) 100%
-            );
-            pointer-events: none;
-        }
-        .hero-coworking-cta {
-            position: absolute;
-            bottom: 130px;
-            left: 55px;
-            z-index: 1;
-            max-width: 560px;
-            pointer-events: auto;
-        }
-        .hero-coworking-cta .eyebrow {
-            display: inline-block;
-            background: linear-gradient(135deg, #2563EB, #7C3AED);
-            color: #fff;
-            font-size: 0.68rem;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            padding: 5px 14px;
-            border-radius: 20px;
-            margin-bottom: 14px;
-        }
-        .hero-coworking-cta h2 {
-            color: #fff;
-            font-size: clamp(1.5rem, 2.8vw, 2.3rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.5);
-        }
-        .hero-coworking-cta p {
-            color: rgba(255,255,255,0.82);
-            font-size: 0.95rem;
-            margin-bottom: 24px;
-            line-height: 1.6;
-            text-shadow: 0 1px 6px rgba(0,0,0,0.4);
-        }
-        @media (max-width: 768px) {
-            .hero-coworking-cta {
-                left: 20px;
-                right: 20px;
-                bottom: 24px;
-                max-width: 100%;
-            }
-            .hero-coworking-cta h2 {
-                font-size: 1.25rem;
-                margin-bottom: 8px;
-            }
-            .hero-coworking-cta p {
-                display: none;
-            }
-            .hero-coworking-cta .eyebrow {
-                font-size: 0.6rem;
-                margin-bottom: 10px;
-            }
-        }
     </style>
 
     <section class="hero-section hero-2">
@@ -144,17 +79,6 @@
                         <video class="video-area" loop="" muted="" autoplay="" playsinline="">
                             <source src="assets/img/video/presentation.mp4" type="video/mp4">
                         </video>
-                        <div class="hero-coworking-cta">
-                            <span class="eyebrow">Espace Coworking</span>
-                            <h2>Un espace pour travailler,<br>créer et vous concentrer</h2>
-                            <p>Salles climatisées, bureaux privés, terrasses aérées — au cœur d'Abidjan.</p>
-                            <a href="/coworking" class="cp-primary-btn">
-                                <span class="btn-text">
-                                    <span class="btn-text-1">Réserver votre place</span>
-                                    <span class="btn-text-2">Réserver votre place</span>
-                                </span>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -165,20 +89,13 @@
     <div class="running-text">
         <div class="carouselTicker carouselTicker-start" data-speed="fast">
             <ul class="text-anim carouselTicker__list">
-                <li>Stratégie de communication</li>
-                <li>Identité visuelle & branding</li>
-                <li>Marketing Digital</li>
-                <li>Création de contenus</li>
-                <li>Location de Studio</li>
-                <li>Podcast Webinaire Live</li>
-                <li>Branding</li>
-                <li>Web Design</li>
-                <li>UI/UX Design</li>
-                <li>Création d'application web/Mobile</li>
-                <li>Sophos Store</li>
-                <li>Vidéo Marketing IA</li>
-                <li>Relations & communication institutionnelle</li>
-                <li>Communication corporate et événementielle</li>
+                <li>Espace Coworking</li>
+                <li>Un espace pour travailler, créer et vous concentrer</li>
+                <li>Salles climatisées</li>
+                <li>Bureaux privés</li>
+                <li>Terrasses aérées</li>
+                <li>Au cœur de Brazzaville</li>
+                <li>Réservez votre place</li>
             </ul>
         </div>
     </div>
@@ -191,10 +108,10 @@
                     <div class="about-content about-content-2 fade-wrapper">
                         <div class="section-heading mb-60" id="lestudio">
                             <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
-                                data-duration="0.9" data-stagger="0.03">Le studio</h4>
-                            <h2 class="section-title" data-text-animation data-split="word" data-duration="1">Votre
+                                data-duration="0.9" data-stagger="0.03">Cabinet de Transformation Digitale</h4>
+                            <h1 class="section-title" data-text-animation data-split="word" data-duration="1">Votre
                                 marque <br> mérite d'être vue, <span>reconnue et mémorisée. <br> On s'en charge.</span>
-                            </h2>
+                            </h1>
                         </div>
                         <div class="about-exp-box fade-top">
                             <!-- <div class="about-carousel swiper">
@@ -215,8 +132,9 @@
                                 <div class="swiper-pagination"></div>
                             </div> -->
                             
-                                <p>Vos objectifs sont notre mission, Nous créons des stratégies <br> qui ne se
-                                    contentent pas de répondre au marché d'aujourd'hui — elles anticipent les
+                                <p>Sophos Congo est un cabinet de transformation digitale et <br> d'intelligence
+                                    artificielle basé à Brazzaville. Nous accompagnons institutions et entreprises
+                                    dans leur transition numérique, avec des stratégies qui anticipent les
                                     opportunités de demain.</p>
                                 <!-- <div class="about-btn">
                                         <a href="about.html" class="cp-primary-btn">
@@ -233,7 +151,7 @@
                 <div class="col-lg-5">
                     <div class="about-img about-img-2 img-reveal">
                         <div class="img-overlay"></div>
-                        <img src="assets/img/image-accueil-3.jpg" alt="about">
+                        <img src="assets/img/image-accueil-3.jpg" alt="Cabinet de transformation digitale Sophos Congo à Brazzaville">
                     </div>
                 </div>
             </div>
@@ -325,33 +243,33 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="service-item-2">
-                            <div class="icon"><img src="assets/img/LES ICONS-01.png" width="70"
+                            <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-04.png') }}" width="70"
                                     alt="service"></div>
                             <div class="service-content">
-                                <h3 class="title"><a href="/services">Marketing <span>Digital</span></a></h3>
-                                <p>Le marketing digital est un levier puissant <br> qui transforme votre présence en
-                                    ligne <br> en opportunités de croissance réelles et mesurables.</p>
+                                <h3 class="title"><a href="/services">Transformation <span>Digitale & IA</span></a></h3>
+                                <p>L'intelligence artificielle n'est plus une option, <br> c'est un levier de
+                                    transformation <br> que nous mettons au service de votre organisation.</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="service-item-2">
-                            <div class="icon"><img src="assets/img/LES ICONS-02.png" width="70"
+                            <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-05.png') }}" width="70"
                                     alt="service"></div>
                             <div class="service-content">
-                                <h3 class="title"><a href="service.html">Identité Visuelle <span>&
-                                            Branding</span></a></h3>
-                                <p>L'identité visuelle est bien plus qu'un logo <br> c'est l'âme de votre marque, <br>
-                                    celle qui parle avant même que vous preniez la parole.</p>
+                                <h3 class="title"><a href="/services">Création de Contenus <span>&
+                                            de Marque</span></a></h3>
+                                <p>Du logo à la vidéo institutionnelle, <br> nous couvrons l'ensemble du spectre
+                                    créatif <br> pour faire de votre communication un actif stratégique.</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="service-item-2">
-                            <div class="icon"><img src="assets/img/LES ICONS-03.png" width="70"
+                            <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-01.png') }}" width="70"
                                     alt="service"></div>
                             <div class="service-content">
-                                <h3 class="title"><a href="/services">Strategie <span>De communication</span></a>
+                                <h3 class="title"><a href="/services">Stratégie <span>De communication</span></a>
                                 </h3>
                                 <p>La stratégie de communication est l'art <br> de dire la bonne chose, au bon moment,
                                     <br> à la bonne audience — pour un impact maximal.
