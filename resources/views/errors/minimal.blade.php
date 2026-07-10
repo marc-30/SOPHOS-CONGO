@@ -139,8 +139,8 @@
                             <h3 class="widget-title">Où nous trouver</h3>
                         </div>
                         <ul class="address-list">
-                            <li>Abidjan, Cocody, Angré cité sir.</li>
-                            <li><a href="tel:+2250716119095">+225 07 16 119 095</a></li>
+                            <li>Ravin du Tchad, Plateau, Brazzaville.</li>
+                            <li><a href="tel:+242067768642">+242 06 776 86 42</a></li>
                             <li><a href="mailto:info@sophoscongo.com">Info@sophoscongo.com</a></li>
                         </ul>
                     </div>

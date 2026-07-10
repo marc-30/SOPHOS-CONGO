@@ -1,4 +1,7 @@
-<x-layout title="Coworking">
+<x-layout
+    title="Espace Coworking Brazzaville — Sophos Spaces | Sophos Congo"
+    description="Réservez votre espace de coworking à Brazzaville avec Sophos Spaces : salles climatisées, bureaux privés, terrasses aérées et salles de réunion, par le cabinet de transformation digitale Sophos Congo."
+>
 
     <style>
         /* ══════════════════════════════════════
@@ -239,8 +242,8 @@
             <div class="side-menu-contact">
                 <div class="side-menu-header"><h3>Où nous trouver</h3></div>
                 <ul class="side-menu-list">
-                    <li><i class="fas fa-map-marker-alt"></i><p>Abidjan, Cocody, Angré cité sir.</p></li>
-                    <li><i class="fas fa-phone"></i><a href="tel:+2250716119095">+225 07 16 119 095</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i><p>Ravin du Tchad, Plateau, Brazzaville.</p></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+242067768642">+242 06 776 86 42</a></li>
                     <li><i class="fas fa-envelope-open-text"></i><a href="mailto:Info@sophoscongo.com">Info@sophoscongo.com</a></li>
                 </ul>
             </div>
@@ -358,32 +361,30 @@
                                                         <input type="text" placeholder="Rechercher une ville..." id="cs-commune-search" autocomplete="off">
                                                     </div>
                                                     <div class="cs-list" id="cs-commune-list">
-                                                        <p class="cs-group-label">Communes d'Abidjan</p>
-                                                        <div class="cs-option" data-value="Abobo">Abobo</div>
-                                                        <div class="cs-option" data-value="Adjamé">Adjamé</div>
-                                                        <div class="cs-option" data-value="Anyama">Anyama</div>
-                                                        <div class="cs-option" data-value="Attécoubé">Attécoubé</div>
-                                                        <div class="cs-option" data-value="Bingerville">Bingerville</div>
-                                                        <div class="cs-option" data-value="Cocody">Cocody</div>
-                                                        <div class="cs-option" data-value="Koumassi">Koumassi</div>
-                                                        <div class="cs-option" data-value="Marcory">Marcory</div>
-                                                        <div class="cs-option" data-value="Plateau">Plateau</div>
-                                                        <div class="cs-option" data-value="Port-Bouët">Port-Bouët</div>
-                                                        <div class="cs-option" data-value="Treichville">Treichville</div>
-                                                        <div class="cs-option" data-value="Yopougon">Yopougon</div>
-                                                        <p class="cs-group-label">Autres villes de Côte d'Ivoire</p>
-                                                        <div class="cs-option" data-value="Abengourou">Abengourou</div>
-                                                        <div class="cs-option" data-value="Aboisso">Aboisso</div>
-                                                        <div class="cs-option" data-value="Bondoukou">Bondoukou</div>
-                                                        <div class="cs-option" data-value="Bouaké">Bouaké</div>
-                                                        <div class="cs-option" data-value="Daloa">Daloa</div>
-                                                        <div class="cs-option" data-value="Divo">Divo</div>
-                                                        <div class="cs-option" data-value="Gagnoa">Gagnoa</div>
-                                                        <div class="cs-option" data-value="Korhogo">Korhogo</div>
-                                                        <div class="cs-option" data-value="Man">Man</div>
-                                                        <div class="cs-option" data-value="San-Pédro">San-Pédro</div>
-                                                        <div class="cs-option" data-value="Soubré">Soubré</div>
-                                                        <div class="cs-option" data-value="Yamoussoukro">Yamoussoukro</div>
+                                                        <p class="cs-group-label">Arrondissements de Brazzaville</p>
+                                                        <div class="cs-option" data-value="Makélékélé">Makélékélé</div>
+                                                        <div class="cs-option" data-value="Bacongo">Bacongo</div>
+                                                        <div class="cs-option" data-value="Poto-Poto">Poto-Poto</div>
+                                                        <div class="cs-option" data-value="Moungali">Moungali</div>
+                                                        <div class="cs-option" data-value="Ouenzé">Ouenzé</div>
+                                                        <div class="cs-option" data-value="Talangaï">Talangaï</div>
+                                                        <div class="cs-option" data-value="Mfilou">Mfilou</div>
+                                                        <div class="cs-option" data-value="Madibou">Madibou</div>
+                                                        <div class="cs-option" data-value="Djiri">Djiri</div>
+                                                        <div class="cs-option" data-value="Plateau">Plateau / Centre-Ville</div>
+                                                        <p class="cs-group-label">Autres villes du Congo</p>
+                                                        <div class="cs-option" data-value="Pointe-Noire">Pointe-Noire</div>
+                                                        <div class="cs-option" data-value="Dolisie">Dolisie</div>
+                                                        <div class="cs-option" data-value="Nkayi">Nkayi</div>
+                                                        <div class="cs-option" data-value="Owando">Owando</div>
+                                                        <div class="cs-option" data-value="Ouesso">Ouesso</div>
+                                                        <div class="cs-option" data-value="Impfondo">Impfondo</div>
+                                                        <div class="cs-option" data-value="Sibiti">Sibiti</div>
+                                                        <div class="cs-option" data-value="Gamboma">Gamboma</div>
+                                                        <div class="cs-option" data-value="Kinkala">Kinkala</div>
+                                                        <div class="cs-option" data-value="Madingou">Madingou</div>
+                                                        <div class="cs-option" data-value="Loandjili">Loandjili</div>
+                                                        <div class="cs-option" data-value="Djambala">Djambala</div>
                                                     </div>
                                                 </div>
                                                 <input type="hidden" name="commune" id="cs-commune-value" value="{{ old('commune') }}" required>

@@ -20,12 +20,12 @@
             <div class="side-menu-header">
                 <h3>Qui sommes nous ?</h3>
             </div>
-            <p>Implantée au cœur de l'écosystème
-                dynamique de la Côte d’Ivoire, notre
-                agence déploie des solutions de
-                communication intégrées (360°) alliant
-                ingénierie stratégique et innovation
-                créative.
+            <p>Cabinet de transformation digitale et
+                d'intelligence artificielle, Sophos Congo
+                accompagne institutions, entreprises et
+                dirigeants dans leur transition numérique —
+                avec la communication stratégique comme l'un
+                de nos services clés.
             </p>
             <!-- <a href="/studiopodcast" class="cp-primary-btn">
                 <span class="btn-text">
@@ -41,11 +41,11 @@
             <ul class="side-menu-list">
                 <li>
                     <i class="fas fa-map-marker-alt"></i>
-                    <p>Abidjan, Cocody, Angré cité sir, </p>
+                    <p>Ravin du Tchad, Plateau, Brazzaville, </p>
                 </li>
                 <li>
                     <i class="fas fa-phone"></i>
-                    <a href="tel:+2250716119095">+225 07 16 119 095</a>
+                    <a href="tel:+242067768642">+242 06 776 86 42</a>
                 </li>
                 <li>
                     <i class="fas fa-envelope-open-text"></i>

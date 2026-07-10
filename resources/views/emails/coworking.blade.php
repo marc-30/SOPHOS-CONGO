@@ -15,7 +15,7 @@
                     <!-- HEADER -->
                     <tr>
                         <td style="background-color:#0d0d0d; border-radius:12px 12px 0 0; padding: 40px 50px; text-align:center;">
-                            <p style="margin:0 0 6px 0; color:#aaaaaa; font-size:11px; letter-spacing:3px; text-transform:uppercase;">Agence de communication</p>
+                            <p style="margin:0 0 6px 0; color:#aaaaaa; font-size:11px; letter-spacing:3px; text-transform:uppercase;">Cabinet de transformation digitale</p>
                             <h1 style="margin:0; color:#ffffff; font-size:28px; font-weight:700; letter-spacing:1px;">SOPHOS CONGO</h1>
                             <div style="width:50px; height:2px; background:#2563EB; margin:16px auto 0;"></div>
                         </td>
@@ -138,9 +138,9 @@
                     <tr>
                         <td style="background-color:#0d0d0d; border-radius:0 0 12px 12px; padding:30px 50px; text-align:center;">
                             <p style="margin:0 0 6px 0; color:#ffffff; font-size:13px; font-weight:600;">Sophos Congo</p>
-                            <p style="margin:0 0 4px 0; color:#666666; font-size:12px;">Abidjan, Cocody, Angré Cité Sir</p>
+                            <p style="margin:0 0 4px 0; color:#666666; font-size:12px;">Ravin du Tchad, Plateau, Brazzaville</p>
                             <p style="margin:0 0 4px 0; color:#666666; font-size:12px;">
-                                <a href="tel:+2250716119095" style="color:#2563EB; text-decoration:none;">+225 07 16 119 095</a>
+                                <a href="tel:+242067768642" style="color:#2563EB; text-decoration:none;">+242 06 776 86 42</a>
                                 &nbsp;·&nbsp;
                                 <a href="mailto:info@sophoscongo.com" style="color:#2563EB; text-decoration:none;">info@sophoscongo.com</a>
                             </p>

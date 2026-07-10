@@ -6,7 +6,7 @@
                 <h4 style="background:linear-gradient(135deg,#2563EB,#7C3AED);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; font-size:0.78rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:14px; font-weight:700;">Espace Coworking</h4>
                 <h2 class="section-title" style="margin-bottom:16px;">Besoin d'un espace pour <span>travailler et créer ?</span></h2>
                 <p style="opacity:0.6; font-size:1rem; line-height:1.7; max-width:520px; margin:0;">
-                    Salles climatisées, bureaux privés, terrasses aérées et salles de réunion disponibles à Abidjan, Cocody — Angré Cité Sir.
+                    Salles climatisées, bureaux privés, terrasses aérées et salles de réunion disponibles à Brazzaville, Ravin du Tchad — Plateau.
                 </p>
             </div>
             <div class="col-lg-4 text-lg-end">

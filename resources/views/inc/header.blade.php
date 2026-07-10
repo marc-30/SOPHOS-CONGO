@@ -12,7 +12,7 @@
                      <div class="mobile-menu-items">
                          <ul>
                              <li><a href="/">Accueil</a></li>
-                             <li><a href="/#lestudio">L'agence de com</a></li>
+                             <li><a href="/#lestudio">Le cabinet</a></li>
                              <li><a href="/services">Nos Services</a></li>
                              <li>
                                  <a href="https://www.facebook.com/profile.php?id=61588482088145" target="_blank"
