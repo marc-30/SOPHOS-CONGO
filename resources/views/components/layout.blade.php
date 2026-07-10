@@ -1,4 +1,6 @@
-<!-- resources/views/components/layout.blade.php -->
+{{-- resources/views/components/layout.blade.php --}}
+{{-- Layout global du site : structure HTML commune (head, meta SEO, footer, scripts) partagée par toutes les pages via <x-layout> --}}
+{{-- Titre et description par défaut, surchargés par chaque page qui utilise ce composant --}}
 @props([
     'title' => 'Sophos Congo — Cabinet de Transformation Digitale, Communication & IA à Brazzaville',
     'description' => "Sophos Congo, cabinet de transformation digitale et d'intelligence artificielle à Brazzaville : conseil stratégique, communication institutionnelle, nation branding, création de contenus et formation professionnelle.",
@@ -14,10 +16,10 @@
     <meta name="description" content="{{ $description }}">
     <link rel="canonical" href="{{ url()->current() }}">
 
-    <!-- Site Title -->
+    {{-- Titre de l'onglet du navigateur --}}
     <title>{{ $title }}</title>
 
-    <!-- Open Graph -->
+    {{-- Balises Open Graph : aperçu du site lors d'un partage sur Facebook et autres réseaux sociaux --}}
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Sophos Congo">
     <meta property="og:locale" content="fr_FR">
@@ -26,13 +28,13 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('assets/img/logo/SOPHOS LOGO WEB.png') }}">
 
-    <!-- Twitter Card -->
+    {{-- Balises Twitter Card : aperçu du site lors d'un partage sur Twitter/X --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $title }}">
     <meta name="twitter:description" content="{{ $description }}">
     <meta name="twitter:image" content="{{ asset('assets/img/logo/SOPHOS LOGO WEB.png') }}">
 
-    <!-- Données structurées -->
+    {{-- Données structurées (JSON-LD) : bloc PHP qui construit les infos de l'entreprise (nom, adresse, contacts, réseaux sociaux) au format schema.org, lues par les moteurs de recherche pour améliorer le référencement --}}
     @php
         $structuredData = [
             '@context' => 'https://schema.org',
@@ -60,10 +62,10 @@
     @endphp
     <script type="application/ld+json">{!! json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
 
-    <!-- Place favicon.ico in the root directory -->
+    {{-- Icône du site affichée dans l'onglet du navigateur (favicon) --}}
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
 
-    <!-- CSS here -->
+    {{-- Feuilles de styles CSS (librairies tierces + styles principaux du site) --}}
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/venobox.min.css') }}">
@@ -73,6 +75,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 
+    {{-- Surcharge de style pour le titre du carrousel des sponsors (forcer le blanc) --}}
     <style>
         h4 .sponsor-title, h4 .sponsor-title:hover {
             color: white !important;
@@ -82,8 +85,10 @@
 
 <body>
 
+    {{-- Contenu propre à chaque page, injecté ici par le composant <x-layout> --}}
     {{ $slot }}
 
+    {{-- Pied de page global du site (identique sur toutes les pages) --}}
     <footer class="footer-section overflow-hidden">
         <div class="container">
             <div class="footer-text text-center">
@@ -91,6 +96,7 @@
                             class="fa-regular fa-arrow-right"></i></a></h3>
             </div>
             <div class="row footer-wrap">
+                {{-- Colonne 1 : logo, accroche et liens réseaux sociaux --}}
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
                         <div class="widget-header">
@@ -111,6 +117,7 @@
                         </ul>
                     </div>
                 </div>
+                {{-- Colonne 2 : liste des services (liens rapides) --}}
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget footer-col-2">
                         <div class="widget-header">
@@ -125,6 +132,7 @@
                         </ul>
                     </div>
                 </div>
+                {{-- Colonne 3 : coordonnées (adresse, téléphone, email) --}}
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
                         <div class="widget-header">
@@ -137,6 +145,7 @@
                         </ul>
                     </div>
                 </div>
+                {{-- Colonne 4 : formulaire d'inscription à la newsletter --}}
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
                         <div class="widget-header">
@@ -160,6 +169,7 @@
                 </div>
             </div>
         </div>
+        {{-- Bandeau de copyright et liens légaux, en bas du footer --}}
         <div class="copyright-area">
             <div class="container">
                 <div class="row copyright-content">
@@ -178,10 +188,10 @@
     </footer>
     <!-- ./ footer-section -->
 
+    {{-- Indicateur visuel de la progression du scroll sur la page (bouton "remonter en haut") --}}
     <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
-    <!--scrollup-->
 
-    <!-- JS here -->
+    {{-- Scripts JS : librairies tierces (jQuery, Bootstrap, GSAP, Swiper...) puis scripts propres au site --}}
     <script src="{{ asset('assets/js/vendor/jquary-3.7.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/bootstrap-bundle.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/imagesloaded-pkgd.js') }}"></script>

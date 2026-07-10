@@ -1,16 +1,22 @@
 
+// Fichier JS principal du thème : regroupe toutes les interactions front-end
+// (préchargeur, menu, sliders Swiper, animations GSAP, curseur personnalisé, etc.).
+// Le code est enveloppé dans une IIFE (fonction auto-exécutée) recevant jQuery en paramètre "$"
+// afin d'éviter les conflits avec d'autres librairies utilisant aussi le symbole "$".
 (function ($) {
     "use strict";
 
-    // Get Device width
+    // Récupère la largeur de l'écran/du device.
     var device_width = window.innerWidth;
 
     /*======================================
-        Preloader activation
+        Activation du préchargeur (preloader)
     ========================================*/
+    // Une fois que toute la page (images, styles, etc.) est chargée...
     $(window).on("load", function (event) {
-        
-        // Preloader
+
+        // Préchargeur : ajoute la classe "loaded" au conteneur, puis supprime
+        // l'élément #preloader après un court délai (effet de disparition).
         $(document).ready(function () {
             $('#container').addClass('loaded');
             if ($('#container').hasClass('loaded')) {
@@ -20,7 +26,8 @@
             }
         });
         
-        // Text Animation
+        // Animation du texte (SplitType + GSAP) : découpe les éléments ".anim-text"
+        // en lignes/caractères puis anime leur apparition (translation verticale).
         setTimeout(() => {
         var hasAnim = $(".anim-text");
             hasAnim.each(function () {
@@ -44,19 +51,28 @@
         }, 1000);
     });
 
+    // Permet de fermer manuellement le préchargeur au clic sur le bouton dédié.
     $(".preloader-close").on("click", function () {
         $("#preloader").delay(0).fadeOut(500);
     });
 
     $(document).ready(function () {
 
+        // Ajoute une classe spécifique au <body> si le navigateur est Firefox
+        // (utile pour appliquer des correctifs CSS propres à ce navigateur).
         if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
             $('body').addClass('firefox');
         }
-        
+
         var header = $(".header"),
             stickyHeader = $(".primary-header");
 
+        /*======================================
+            Header collant (sticky) au défilement
+        ========================================*/
+        // Ajoute/retire la classe "fixed" sur le header selon la position de défilement,
+        // et ajuste la hauteur du header pour éviter un saut de contenu (uniquement
+        // sur les écrans larges, cf. media query passée en paramètre).
         function menuSticky(w) {
             if (w.matches) {
                 
@@ -80,12 +96,15 @@
             }
         }
 
+        // N'active le comportement "sticky" du header que sur les écrans >= 992px,
+        // et seulement si le header porte la classe "sticky-active".
         var minWidth = window.matchMedia("(min-width: 992px)");
         if (header.hasClass("sticky-active")) {
             menuSticky(minWidth);
         }
 
-        //Mobile Menu Js
+        // Initialisation du menu mobile (plugin meanmenu) : transforme le menu
+        // de navigation en menu déroulant adapté aux petits écrans.
         $(".mobile-menu-items").meanmenu({
             meanMenuContainer: ".side-menu-wrap",
             meanScreenWidth: "992",
@@ -94,7 +113,8 @@
             meanExpand: ['<i class="fa-solid fa-caret-down"></i>'],
         });
 
-        // Mobile Sidemenu
+        // Menu latéral mobile (sidemenu) : ouverture/fermeture au clic
+        // sur le bouton dédié, l'overlay ou le bouton de fermeture.
         $(".mobile-side-menu-toggle").on("click", function () {
             $(".mobile-side-menu, .mobile-side-menu-overlay").toggleClass("is-open");
         });
@@ -103,7 +123,8 @@
             $(".mobile-side-menu, .mobile-side-menu-overlay").removeClass("is-open");
         });
 
-        // Popup Search Box
+        // Boîte de recherche en popup : affichage/masquage au clic sur l'icône
+        // de recherche, avec fermeture automatique au clic en dehors de la boîte.
         $(function () {
             $("#popup-search-box").removeClass("toggled");
 
@@ -122,7 +143,8 @@
             });
         });
 
-        // Popup Sidebox
+        // Barre latérale en popup (sidebox) : ouverture/fermeture via des
+        // écouteurs délégués sur les boutons déclencheurs et l'overlay.
         function sideBox() {
             $("body").removeClass("open-sidebar");
             $(document).on("click", ".sidebar-trigger", function (e) {
@@ -137,7 +159,7 @@
 
         sideBox();
 
-        // Venobox Video
+        // Initialisation de VenoBox pour les popups vidéo/image (lightbox).
         new VenoBox({
             selector: ".video-popup, .img-popup",
             bgcolor: "transparent",
@@ -146,12 +168,14 @@
             spinner: "plane",
         });
 
-        // Data Background
+        // Applique dynamiquement une image de fond CSS aux éléments possédant
+        // l'attribut "data-background" (permet de définir le fond via le HTML/CMS).
         $("[data-background").each(function () {
             $(this).css("background-image", "url( " + $(this).attr("data-background") + "  )");
         });
 
-        // Custom Cursor
+        // Curseur personnalisé : ajoute un élément suivant la souris et le fait
+        // suivre le déplacement du pointeur sur toute la fenêtre.
         $("body").append('<div class="mt-cursor"></div>');
         var cursor = $(".mt-cursor"),
             linksCursor = $("a, .swiper-nav, button, .cursor-effect"),
@@ -164,7 +188,8 @@
             });
         });
 
-        /* Odometer */
+        // Compteur animé (Odometer) : déclenche l'affichage du chiffre cible
+        // lorsque l'élément entre dans la zone visible (waypoint).
         $(".odometer").waypoint(
             function () {
                 var odo = $(".odometer");
@@ -179,28 +204,32 @@
             }
         );
 
-        // Nice Select Js
+        // Améliore les listes déroulantes <select> natives avec le plugin Nice Select.
         $("select").niceSelect();
 
-        // Award Animation
+        // Animation de la section "Récompenses" (awards) : au survol d'un élément
+        // de la liste, l'image principale change avec une transition en fondu.
 
-        let lastActiveImg = $(".award-main-img").attr("src"); // Store the default image
+        let lastActiveImg = $(".award-main-img").attr("src"); // Stocke l'image par défaut
 
         $(document).on("mouseenter", ".award-list-item", function() {
-            let newImg = $(this).data("img"); // Get image from data attribute
-            
-            // Smooth transition: fade out, change src, fade in
+            let newImg = $(this).data("img"); // Récupère l'image depuis l'attribut data
+
+            // Transition douce : disparition en fondu, changement de la source, apparition en fondu
             $(".award-main-img").stop().fadeOut(300, function() {
                 $(this).attr("src", newImg).fadeIn(300);
             });
 
-            $(".award-list-item").removeClass("active"); // Remove active class from all
-            $(this).addClass("active"); // Add active class to hovered item
-            
-            lastActiveImg = newImg; // Store last active image
+            $(".award-list-item").removeClass("active"); // Retire la classe active de tous les éléments
+            $(this).addClass("active"); // Ajoute la classe active à l'élément survolé
+
+            lastActiveImg = newImg; // Mémorise la dernière image active
         });
 
-        // Testi Carousel
+        /*======================================
+            Sliders Swiper (témoignages, à propos, services, projets, sponsors)
+        ========================================*/
+        // Slider des témoignages (variante 1)
         var swiperTesti = new Swiper(".testi-carousel", {
             slidesPerView: 2,
             spaceBetween: 24,
@@ -230,7 +259,7 @@
         });
 
 
-        // About Carousel
+        // Slider de la section "À propos"
         var swiperAbout = new Swiper(".about-carousel", {
             slidesPerView: 1,
             spaceBetween: 24,
@@ -259,7 +288,7 @@
             },
         });
 
-        // Testi Carousel
+        // Slider des témoignages (variante 2)
         var swiperTesti = new Swiper(".testi-carousel-2", {
             slidesPerView: 1,
             spaceBetween: 24,
@@ -274,7 +303,7 @@
             },
         });
 
-        // Service Carousel
+        // Slider des services
         var swiperService = new Swiper(".service-carousel", {
             slidesPerView: 3,
             spaceBetween: 24,
@@ -303,7 +332,7 @@
             },
         });
 
-        // Project Carousel
+        // Slider des projets
         var swiperProject = new Swiper(".project-carousel", {
             slidesPerView: 1,
             spaceBetween: 24,
@@ -329,7 +358,8 @@
             },
         });
 
-        // Brand Slider
+        // Slider des logos de marques/sponsors, avec configuration dynamique
+        // de l'autoplay et de la vitesse à partir des attributs data-* du HTML.
         var sponsorCarouselElement = document.querySelector(".sponsor-carousel");
 
         if (sponsorCarouselElement) {
@@ -373,6 +403,8 @@
         }
 
 
+        // Effet "hover reveal" : fait suivre une image/élément enfant au curseur
+        // lors du survol des éléments ".service-hover-reveal-item" (ex: aperçu image au survol d'un service).
         // hover reveal start
             const hoverItem = document.querySelectorAll(".service-hover-reveal-item");
             function moveImage(e, hoverItem, index) {
@@ -390,14 +422,17 @@
             });
 	    // hover reveal end
 
-        // carouselTicker initail 
+        // Initialisation du bandeau défilant (carouselTicker), utilisé par exemple
+        // pour un défilement continu de texte/logos.
         $('.carouselTicker-nav').carouselTicker({
         });
         $(".carouselTicker-start").carouselTicker({
             direction: "next",
         });
 
-        //Running Animated Text
+        // Texte défilant en boucle (marquee) : duplique le contenu des éléments
+        // ".scroller" afin de créer un effet de défilement infini en CSS,
+        // sauf si l'utilisateur a activé la préférence "réduire les animations".
         const scrollers = document.querySelectorAll(".scroller");
 
         if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -420,7 +455,11 @@
         }
 
 
-        // Image Reveal
+        /*======================================
+            Animation de révélation d'image au défilement (GSAP + ScrollTrigger)
+        ========================================*/
+        // Effet "reveal" : le conteneur et l'image glissent depuis des directions
+        // opposées pour créer un effet de dévoilement au scroll.
 
         gsap.registerPlugin(ScrollTrigger);
 
@@ -448,8 +487,12 @@
             });
         });
 
+        // Effet "reveal" alternatif (overlay + zoom) : un cache (overlay) se rétracte
+        // pendant que l'image effectue un léger zoom arrière, déclenché à l'entrée
+        // dans le viewport via IntersectionObserver.
         const images = document.querySelectorAll(".img-reveal");
 
+        // Anime la disparition de l'overlay (réduction de largeur à 0%).
         const removeOverlay = overlay => {
             let tl = gsap.timeline();
 
@@ -462,6 +505,7 @@
             return tl;
         };
 
+        // Anime le zoom arrière de l'image (de agrandie à taille normale).
         const scaleInImage = image => {
             let tl = gsap.timeline();
 
@@ -474,8 +518,10 @@
             return tl;
         };
 
+        // Pour chaque image concernée, construit une timeline combinant les deux
+        // animations ci-dessus et la déclenche/inverse selon la visibilité (IntersectionObserver).
         images.forEach(image => {
-        
+
             gsap.set(image, {
                 visibility: "visible"
             });
@@ -506,8 +552,16 @@
             io.observe(image);
         });
 
-        // Scroll Animation
+        /*======================================
+            Animations de texte au défilement (data-text-animation)
+            Lit les attributs data-* (data-text-animation, data-duration, data-stagger,
+            data-delay, data-ease, data-scroll, data-offset, data-split) sur chaque élément
+            pour configurer dynamiquement le type d'animation GSAP à appliquer au texte
+            (slide-up, slide-down, rotate-in, fade-in, etc.), avec ou sans lien au scroll (scrub).
+        ========================================*/
 
+        // Découpe tous les éléments concernés en lignes/mots/caractères via SplitType,
+        // nécessaire pour pouvoir animer chaque fragment de texte séparément.
         let typeSplit = new SplitType("[data-text-animation]", {
             types: "lines,words, chars",
             className: "line",
@@ -515,9 +569,10 @@
         var text_animations = document.querySelectorAll(
             "[data-text-animation]"
             );
-            
+
+            // Déclenche la lecture de la timeline d'animation lorsque l'élément
+            // entre dans le viewport (80% depuis le haut de l'écran).
             function createScrollTrigger(triggerElement, timeline) {
-            // Play tl when scrolled into view (60% from top of screen)
             ScrollTrigger.create({
                 trigger: triggerElement,
                 start: "top 80%",
@@ -535,7 +590,7 @@
             scroll = 1,
             split = "line",
             ease = "power2.out";
-        // Set attribute
+        // Lit les attributs data-* de l'élément pour surcharger les valeurs par défaut ci-dessus
         if (animation.getAttribute("data-stagger")) {
             stagger = animation.getAttribute("data-stagger");
         }
@@ -560,6 +615,9 @@
         if (animation.getAttribute("data-split")) {
             split = animation.getAttribute("data-split");
         }
+        // Cas où l'animation est liée au scroll (data-scroll="1", valeur par défaut) :
+        // chaque type d'animation ("type") construit sa propre timeline GSAP,
+        // déclenchée via createScrollTrigger() lorsque l'élément entre dans le viewport.
         if (scroll == 1) {
             if (type == "slide-up") {
             let tl = gsap.timeline({ paused: true });
@@ -685,9 +743,13 @@
             });
             }
 
-            // Avoid flash of unstyled content
+            // Évite le flash de contenu non stylé (FOUC) en rendant le texte visible
+            // une fois les timelines d'animation préparées.
             gsap.set("[data-text-animation]", { opacity: 1 });
         } else {
+            // Cas où l'animation n'est pas liée au scroll (data-scroll != 1) :
+            // les mêmes types d'animation sont définis mais sans ScrollTrigger
+            // (la timeline est créée mais peut être déclenchée autrement/ailleurs).
             if (type == "slide-up") {
             let tl = gsap.timeline({ paused: true });
             tl.from(animation.querySelectorAll(`.${split}`), {
@@ -759,6 +821,8 @@
         }
         });
 
+        // Animation "fade-top" en cascade : chaque élément ".fade-top" d'un
+        // ".fade-wrapper" apparaît en fondu avec un léger décalage (delay) croissant.
         if ($(".fade-wrapper").length > 0) {
             $(".fade-wrapper").each(function () {
                 var section = $(this);
@@ -791,6 +855,8 @@
             });
         }
         
+        // Animation d'apparition caractère par caractère pour les éléments
+        // ".text-animation-effect", déclenchée peu après le chargement complet de la page.
         window.addEventListener("load", (event) => {
             setTimeout(() => {
                 function textAnimationEffect(){
@@ -804,7 +870,9 @@
             }, 200);
         });
 
-        // scale animation 
+        // Animation d'échelle (zoom) au défilement : les éléments ".scale" et les images
+        // à l'intérieur passent d'une taille agrandie/réduite à leur taille normale,
+        // en lecture/inversion selon le sens du scroll (toggleActions).
         var scale = document.querySelectorAll(".scale");
         var image = document.querySelectorAll(".scale img");
         scale.forEach((item) => {
@@ -836,7 +904,9 @@
             });
         })
 
-        // Page Scroll Percentage
+        // Pourcentage de défilement de la page : calcule le pourcentage scrollé
+        // et met à jour visuellement le bouton "retour en haut" (dégradé conique
+        // représentant la progression, remplacé par une flèche une fois proche de 100%).
         function scrollTopPercentage() {
             const scrollPercentage = () => {
                 const scrollTopPos = document.documentElement.scrollTop;
@@ -845,8 +915,8 @@
                 const scrollElementWrap = $("#scroll-percentage");
 
                 scrollElementWrap.css("background", `conic-gradient( var(--cp-color-theme-primary) ${scrollValue}%, var(--cp-color-bg-2) ${scrollValue}%)`);
-                
-                // ScrollProgress
+
+                // Affiche/masque l'indicateur de progression du scroll
                 if ( scrollTopPos > 100 ) {
                     scrollElementWrap.addClass("active");
                 } else {
@@ -862,7 +932,7 @@
             window.onscroll = scrollPercentage;
             window.onload = scrollPercentage;
 
-            // Back to Top
+            // Retour en haut de page (clic sur l'indicateur de progression)
             function scrollToTop() {
                 document.documentElement.scrollTo({
                     top: 0,
@@ -876,6 +946,8 @@
         scrollTopPercentage();
     });
 
+    // Boutons de défilement vers une section ciblée (ancre définie via data-target),
+    // avec un défilement fluide animé par GSAP (plugin ScrollTo).
     document.querySelectorAll(".scroll-btn").forEach((btn, index) => {
         btn.addEventListener("click", () => {
             var sectionTarget = btn.getAttribute("data-target");

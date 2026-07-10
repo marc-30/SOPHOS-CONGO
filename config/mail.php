@@ -4,13 +4,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Mailer
+    | Mailer par défaut
     |--------------------------------------------------------------------------
     |
-    | This option controls the default mailer that is used to send all email
-    | messages unless another mailer is explicitly specified when sending
-    | the message. All additional mailers can be configured within the
-    | "mailers" array. Examples of each type of mailer are provided.
+    | Cette option contrôle le mailer par défaut qui est utilisé pour
+    | envoyer tous les e-mails, à moins qu'un autre mailer ne soit
+    | explicitement spécifié lors de l'envoi du message. Tous les mailers
+    | supplémentaires peuvent être configurés dans le tableau "mailers".
+    | Des exemples pour chaque type de mailer sont fournis.
     |
     */
 
@@ -18,20 +19,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Mailer Configurations
+    | Configurations des mailers
     |--------------------------------------------------------------------------
     |
-    | Here you may configure all of the mailers used by your application plus
-    | their respective settings. Several examples have been configured for
-    | you and you are free to add your own as your application requires.
+    | Vous pouvez ici configurer tous les mailers utilisés par votre
+    | application ainsi que leurs paramètres respectifs. Plusieurs
+    | exemples ont été configurés pour vous et vous êtes libre d'ajouter
+    | les vôtres selon les besoins de votre application.
     |
-    | Laravel supports a variety of mail "transport" drivers that can be used
-    | when delivering an email. You may specify which one you're using for
-    | your mailers below. You may also add additional mailers if needed.
+    | Laravel prend en charge une variété de pilotes de "transport" d'e-mail
+    | pouvant être utilisés lors de l'envoi d'un e-mail. Vous pouvez
+    | spécifier celui que vous utilisez pour vos mailers ci-dessous. Vous
+    | pouvez également ajouter des mailers supplémentaires si nécessaire.
     |
-    | Supported: "smtp", "sendmail", "mailgun", "ses", "ses-v2",
-    |            "postmark", "resend", "log", "array",
-    |            "failover", "roundrobin"
+    | Pris en charge : "smtp", "sendmail", "mailgun", "ses", "ses-v2",
+    |                  "postmark", "resend", "log", "array",
+    |                  "failover", "roundrobin"
     |
     */
 
@@ -70,15 +73,18 @@ return [
             'path' => env('MAIL_SENDMAIL_PATH', '/usr/sbin/sendmail -bs -i'),
         ],
 
+        // Écrit les e-mails dans les logs au lieu de les envoyer réellement (utile en développement).
         'log' => [
             'transport' => 'log',
             'channel' => env('MAIL_LOG_CHANNEL'),
         ],
 
+        // Conserve les e-mails en mémoire au lieu de les envoyer (utile pour les tests automatisés).
         'array' => [
             'transport' => 'array',
         ],
 
+        // Bascule vers le mailer suivant de la liste en cas d'échec du premier.
         'failover' => [
             'transport' => 'failover',
             'mailers' => [
@@ -88,6 +94,7 @@ return [
             'retry_after' => 60,
         ],
 
+        // Répartit l'envoi des e-mails entre les mailers listés, à tour de rôle.
         'roundrobin' => [
             'transport' => 'roundrobin',
             'mailers' => [
@@ -101,12 +108,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Global "From" Address
+    | Adresse d'expédition globale ("From")
     |--------------------------------------------------------------------------
     |
-    | You may wish for all emails sent by your application to be sent from
-    | the same address. Here you may specify a name and address that is
-    | used globally for all emails that are sent by your application.
+    | Vous pouvez souhaiter que tous les e-mails envoyés par votre
+    | application le soient depuis la même adresse. Vous pouvez ici
+    | spécifier un nom et une adresse qui seront utilisés globalement pour
+    | tous les e-mails envoyés par votre application.
     |
     */
 

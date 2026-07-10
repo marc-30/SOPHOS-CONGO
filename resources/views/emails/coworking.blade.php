@@ -1,3 +1,5 @@
+{{-- Email HTML envoyé à l'équipe Sophos Congo lors d'une nouvelle demande de réservation de coworking. --}}
+{{-- Le CSS est entièrement inline (obligatoire pour la compatibilité avec les clients mail comme Outlook, Gmail, etc.), ne pas le convertir en feuille de style externe. --}}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,12 +9,13 @@
 </head>
 <body style="margin:0; padding:0; background-color:#f4f4f4; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
 
+    {{-- Tableau englobant centrant le contenu de l'email (structure en tables imposée par les clients mail) --}}
     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f4f4; padding: 40px 0;">
         <tr>
             <td align="center">
                 <table width="620" cellpadding="0" cellspacing="0" border="0" style="max-width:620px; width:100%;">
 
-                    <!-- HEADER -->
+                    {{-- En-tête : logo/nom du cabinet sur fond sombre --}}
                     <tr>
                         <td style="background-color:#0d0d0d; border-radius:12px 12px 0 0; padding: 40px 50px; text-align:center;">
                             <p style="margin:0 0 6px 0; color:#aaaaaa; font-size:11px; letter-spacing:3px; text-transform:uppercase;">Cabinet de transformation digitale</p>
@@ -21,7 +24,7 @@
                         </td>
                     </tr>
 
-                    <!-- BADGE TITRE -->
+                    {{-- Badge indiquant le type de demande (coworking) --}}
                     <tr>
                         <td style="background-color:#1a1a1a; padding: 24px 50px; text-align:center;">
                             <span style="display:inline-block; background:linear-gradient(135deg,#2563EB,#7C3AED); color:#fff; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:8px 20px; border-radius:30px;">
@@ -30,7 +33,7 @@
                         </td>
                     </tr>
 
-                    <!-- CORPS PRINCIPAL -->
+                    {{-- Corps principal de l'email : message d'introduction et détails de la demande --}}
                     <tr>
                         <td style="background-color:#ffffff; padding: 40px 50px;">
 
@@ -39,7 +42,7 @@
                                 Une nouvelle demande de réservation d'espace coworking vient d'être soumise via le site <strong>sophoscongo.com</strong>. Voici les détails ci-dessous.
                             </p>
 
-                            <!-- INFOS PERSONNELLES -->
+                            {{-- Bloc : informations personnelles du demandeur (nom, métier, ville) --}}
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:30px;">
                                 <tr>
                                     <td style="padding-bottom:16px; border-bottom:1px solid #eeeeee;">
@@ -78,7 +81,7 @@
                                 </tr>
                             </table>
 
-                            <!-- FORMULE CHOISIE -->
+                            {{-- Bloc : formule de coworking sélectionnée (espace, durée, prix) --}}
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:30px;">
                                 <tr>
                                     <td style="padding-bottom:16px; border-bottom:1px solid #eeeeee;">
@@ -134,7 +137,7 @@
                         </td>
                     </tr>
 
-                    <!-- FOOTER -->
+                    {{-- Pied de page : coordonnées de l'entreprise et mention de droits réservés --}}
                     <tr>
                         <td style="background-color:#0d0d0d; border-radius:0 0 12px 12px; padding:30px 50px; text-align:center;">
                             <p style="margin:0 0 6px 0; color:#ffffff; font-size:13px; font-weight:600;">Sophos Congo</p>

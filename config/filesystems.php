@@ -4,12 +4,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Filesystem Disk
+    | Disque de fichiers par défaut
     |--------------------------------------------------------------------------
     |
-    | Here you may specify the default filesystem disk that should be used
-    | by the framework. The "local" disk, as well as a variety of cloud
-    | based disks are available to your application for file storage.
+    | Vous pouvez ici spécifier le disque de fichiers par défaut qui doit
+    | être utilisé par le framework. Le disque "local", ainsi qu'une
+    | variété de disques basés sur le cloud, sont disponibles pour le
+    | stockage de fichiers de votre application.
     |
     */
 
@@ -17,19 +18,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Filesystem Disks
+    | Disques de fichiers
     |--------------------------------------------------------------------------
     |
-    | Below you may configure as many filesystem disks as necessary, and you
-    | may even configure multiple disks for the same driver. Examples for
-    | most supported storage drivers are configured here for reference.
+    | Vous pouvez configurer ci-dessous autant de disques de fichiers que
+    | nécessaire, et vous pouvez même configurer plusieurs disques pour un
+    | même pilote. Des exemples pour la plupart des pilotes de stockage
+    | pris en charge sont configurés ici à titre de référence.
     |
-    | Supported drivers: "local", "ftp", "sftp", "s3"
+    | Pilotes pris en charge : "local", "ftp", "sftp", "s3"
     |
     */
 
     'disks' => [
 
+        // Disque privé : les fichiers ne sont pas accessibles publiquement via une URL directe.
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),
@@ -38,6 +41,7 @@ return [
             'report' => false,
         ],
 
+        // Disque public : les fichiers sont accessibles via une URL, notamment après `php artisan storage:link`.
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -64,12 +68,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Symbolic Links
+    | Liens symboliques
     |--------------------------------------------------------------------------
     |
-    | Here you may configure the symbolic links that will be created when the
-    | `storage:link` Artisan command is executed. The array keys should be
-    | the locations of the links and the values should be their targets.
+    | Vous pouvez ici configurer les liens symboliques qui seront créés
+    | lors de l'exécution de la commande Artisan `storage:link`. Les clés
+    | du tableau doivent être les emplacements des liens et les valeurs
+    | doivent être leurs cibles.
     |
     */
 

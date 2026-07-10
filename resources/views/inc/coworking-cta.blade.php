@@ -1,3 +1,6 @@
+{{-- resources/views/inc/coworking-cta.blade.php --}}
+{{-- Bloc d'appel à l'action (CTA) faisant la promotion de l'espace coworking, inclus en bas de plusieurs pages --}}
+{{-- Passer $hidden = true depuis la vue parente pour masquer ce bloc (ex: sur la page coworking elle-même) --}}
 @unless(isset($hidden) && $hidden)
 <section class="coworking-cta-section" style="background:#0a0a0a; border-top:1px solid rgba(255,255,255,0.07); padding:90px 0;">
     <div class="container">

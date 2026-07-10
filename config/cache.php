@@ -6,12 +6,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Cache Store
+    | Store de cache par défaut
     |--------------------------------------------------------------------------
     |
-    | This option controls the default cache store that will be used by the
-    | framework. This connection is utilized if another isn't explicitly
-    | specified when running a cache operation inside the application.
+    | Cette option contrôle le store de cache par défaut qui sera utilisé
+    | par le framework. Cette connexion est utilisée si aucune autre n'est
+    | explicitement spécifiée lors de l'exécution d'une opération de cache
+    | au sein de l'application.
     |
     */
 
@@ -19,21 +20,23 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Cache Stores
+    | Stores de cache
     |--------------------------------------------------------------------------
     |
-    | Here you may define all of the cache "stores" for your application as
-    | well as their drivers. You may even define multiple stores for the
-    | same cache driver to group types of items stored in your caches.
+    | Vous pouvez ici définir tous les "stores" de cache de votre application
+    | ainsi que leurs pilotes. Vous pouvez même définir plusieurs stores pour
+    | un même pilote de cache afin de regrouper des types d'éléments stockés
+    | dans vos caches.
     |
-    | Supported drivers: "array", "database", "file", "memcached",
-    |                    "redis", "dynamodb", "octane",
-    |                    "failover", "null"
+    | Pilotes pris en charge : "array", "database", "file", "memcached",
+    |                          "redis", "dynamodb", "octane",
+    |                          "failover", "null"
     |
     */
 
     'stores' => [
 
+        // Stocke le cache en mémoire, uniquement pour la durée de la requête (utile pour les tests).
         'array' => [
             'driver' => 'array',
             'serialize' => false,
@@ -91,6 +94,7 @@ return [
             'driver' => 'octane',
         ],
 
+        // Bascule automatiquement vers le store suivant de la liste en cas d'échec du premier.
         'failover' => [
             'driver' => 'failover',
             'stores' => [
@@ -103,12 +107,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Cache Key Prefix
+    | Préfixe des clés de cache
     |--------------------------------------------------------------------------
     |
-    | When utilizing the APC, database, memcached, Redis, and DynamoDB cache
-    | stores, there might be other applications using the same cache. For
-    | that reason, you may prefix every cache key to avoid collisions.
+    | Lors de l'utilisation des stores de cache APC, database, memcached,
+    | Redis et DynamoDB, il se peut que d'autres applications utilisent le
+    | même cache. Pour cette raison, vous pouvez préfixer chaque clé de
+    | cache afin d'éviter les collisions.
     |
     */
 

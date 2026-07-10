@@ -4,45 +4,51 @@ use Tests\TestCase;
 
 /*
 |--------------------------------------------------------------------------
-| Test Case
+| Classe de test (Test Case)
 |--------------------------------------------------------------------------
 |
-| The closure you provide to your test functions is always bound to a specific PHPUnit test
-| case class. By default, that class is "PHPUnit\Framework\TestCase". Of course, you may
-| need to change it using the "pest()" function to bind a different classes or traits.
+| La closure que vous fournissez à vos fonctions de test est toujours liée à une classe
+| de test PHPUnit spécifique. Par défaut, cette classe est "PHPUnit\Framework\TestCase".
+| Bien sûr, vous pouvez la changer via la fonction "pest()" pour lier d'autres classes ou traits.
 |
 */
 
+// Lie tous les tests du dossier "Feature" à la classe Tests\TestCase,
+// ce qui leur donne accès aux fonctionnalités de test de Laravel (requêtes HTTP, etc.).
 pest()->extend(TestCase::class)
  // ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
     ->in('Feature');
 
 /*
 |--------------------------------------------------------------------------
-| Expectations
+| Expectations (assertions personnalisées)
 |--------------------------------------------------------------------------
 |
-| When you're writing tests, you often need to check that values meet certain conditions. The
-| "expect()" function gives you access to a set of "expectations" methods that you can use
-| to assert different things. Of course, you may extend the Expectation API at any time.
+| Lorsque vous écrivez des tests, vous devez souvent vérifier que des valeurs respectent
+| certaines conditions. La fonction "expect()" vous donne accès à un ensemble de méthodes
+| d'"expectations" que vous pouvez utiliser pour vérifier différentes choses. Bien sûr,
+| vous pouvez étendre l'API d'Expectation à tout moment.
 |
 */
 
+// Ajoute une expectation personnalisée "toBeOne" qui vérifie qu'une valeur est égale à 1.
 expect()->extend('toBeOne', function () {
     return $this->toBe(1);
 });
 
 /*
 |--------------------------------------------------------------------------
-| Functions
+| Fonctions
 |--------------------------------------------------------------------------
 |
-| While Pest is very powerful out-of-the-box, you may have some testing code specific to your
-| project that you don't want to repeat in every file. Here you can also expose helpers as
-| global functions to help you to reduce the number of lines of code in your test files.
+| Bien que Pest soit très puissant nativement, vous pouvez avoir du code de test spécifique
+| à votre projet que vous ne voulez pas répéter dans chaque fichier. Ici, vous pouvez aussi
+| exposer des fonctions d'aide globales pour réduire le nombre de lignes de code dans vos
+| fichiers de test.
 |
 */
 
+// Fonction d'aide (helper) d'exemple, actuellement vide, pouvant être réutilisée dans les tests.
 function something()
 {
     // ..

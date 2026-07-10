@@ -10,15 +10,17 @@ use Illuminate\Support\Str;
 /**
  * @extends Factory<User>
  */
+// Fabrique (factory) permettant de générer des utilisateurs de test avec des données aléatoires
 class UserFactory extends Factory
 {
     /**
-     * The current password being used by the factory.
+     * Le mot de passe courant utilisé par la fabrique (mis en cache pour éviter
+     * de recalculer le hash à chaque génération d'utilisateur).
      */
     protected static ?string $password;
 
     /**
-     * Define the model's default state.
+     * Définit l'état par défaut du modèle (les valeurs générées pour un nouvel utilisateur).
      *
      * @return array<string, mixed>
      */
@@ -28,13 +30,14 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
+            // Le mot de passe est haché une seule fois puis réutilisé pour toutes les instances générées
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];
     }
 
     /**
-     * Indicate that the model's email address should be unverified.
+     * Indique que l'adresse e-mail du modèle doit être considérée comme non vérifiée.
      */
     public function unverified(): static
     {

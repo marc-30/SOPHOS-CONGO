@@ -7,10 +7,11 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Exécute les migrations (création des tables).
      */
     public function up(): void
     {
+        // Table principale des utilisateurs (authentification)
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -21,12 +22,14 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        // Table stockant les jetons temporaires de réinitialisation de mot de passe
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });
 
+        // Table stockant les sessions des utilisateurs connectés (driver de session en base de données)
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
@@ -38,7 +41,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Annule les migrations (suppression des tables créées ci-dessus).
      */
     public function down(): void
     {

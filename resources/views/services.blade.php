@@ -1,10 +1,11 @@
-<!-- resources/views/home.blade.php -->
+{{-- resources/views/services.blade.php --}}
+{{-- Page "Nos Services" : liste détaillée des offres du cabinet --}}
 <x-layout
     title="Nos Services — Transformation Digitale, IA & Communication | Sophos Congo"
     description="Découvrez les services du cabinet de transformation digitale Sophos Congo : stratégie de communication, transformation digitale & IA, nation branding, création de contenus, formation et consulting à Brazzaville."
 >
 
-    <!-- Preloader -->
+    {{-- Écran de chargement affiché le temps que la page se charge --}}
     <div id="preloader">
         <div id="container" class="container-preloader">
             <div class="preloader-anim">
@@ -15,8 +16,10 @@
         </div>
     </div>
 
+    {{-- En-tête / barre de navigation principale --}}
     @include('inc.header')
 
+    {{-- Fenêtre popup de recherche (ouverte via l'icône loupe du header) --}}
     <div id="popup-search-box">
         <div class="box-inner-wrap d-flex align-items-center">
             <form id="form" action="#" method="get" role="search">
@@ -27,8 +30,10 @@
     </div>
     <!-- /#popup-search-box -->
 
+    {{-- Panneau latéral (sidebar) avec présentation et coordonnées --}}
     @include('inc.sidebar')
 
+    {{-- Menu mobile latéral (déroulé sur petits écrans) --}}
     <div class="mobile-side-menu">
         <div class="side-menu-content">
             <div class="side-menu-head">
@@ -66,6 +71,7 @@
     <!-- /.mobile-side-menu -->
     <div class="mobile-side-menu-overlay"></div>
 
+    {{-- Bannière d'en-tête de la page Services --}}
     <section class="page-header" data-background="assets/img/service2.jpg">
         <div class="overlay"></div>
         <div class="container">
@@ -78,6 +84,7 @@
     </section>
     <!-- ./ page-header -->
 
+    {{-- Grille détaillée des 8 offres de services du cabinet --}}
     <section class="service-section-3 pt-150 pb-150">
         <div class="container">
             <div class="row gy-4">
@@ -163,6 +170,7 @@
     </section>
     <!-- ./ service-section -->
 
+    {{-- Section compétences / savoir-faire (barres de progression animées) --}}
     <section class="skill-section-2 bg-dark-2 pt-150 pb-150">
         <div class="container">
             <div class="skill-img skill-img-2 img-reveal">
@@ -218,5 +226,6 @@
     </section>
     <!-- ./ skill-section -->
 
+{{-- Bloc d'appel à l'action pour la réservation de l'espace coworking (footer commun) --}}
 @include('inc.coworking-cta')
 </x-layout>

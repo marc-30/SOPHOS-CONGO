@@ -1,10 +1,11 @@
-<!-- resources/views/home.blade.php -->
+{{-- resources/views/contact.blade.php --}}
+{{-- Page "Contact" : coordonnées, formulaire d'envoi de message et carte --}}
 <x-layout
     title="Contact — Sophos Congo, Cabinet de Transformation Digitale à Brazzaville"
     description="Contactez Sophos Congo, cabinet de transformation digitale et d'intelligence artificielle à Brazzaville. Plateau, Ravin du Tchad — +242 06 776 86 42."
 >
 
-    <!-- Preloader -->
+    {{-- Écran de chargement affiché le temps que la page se charge --}}
     <div id="preloader">
         <div id="container" class="container-preloader">
             <div class="preloader-anim">
@@ -15,9 +16,11 @@
         </div>
     </div>
 
+    {{-- En-tête / barre de navigation principale --}}
     @include('inc.header')
 
 
+    {{-- Fenêtre popup de recherche (ouverte via l'icône loupe du header) --}}
     <div id="popup-search-box">
         <div class="box-inner-wrap d-flex align-items-center">
             <form id="form" action="#" method="get" role="search">
@@ -28,8 +31,10 @@
     </div>
     <!-- /#popup-search-box -->
 
+    {{-- Panneau latéral (sidebar) avec présentation et coordonnées --}}
     @include('inc.sidebar')
 
+    {{-- Menu mobile latéral (déroulé sur petits écrans) --}}
     <div class="mobile-side-menu">
         <div class="side-menu-content">
             <div class="side-menu-head">
@@ -67,6 +72,7 @@
     <!-- /.mobile-side-menu -->
     <div class="mobile-side-menu-overlay"></div>
 
+    {{-- Bannière d'en-tête de la page Contact --}}
     <section class="page-header" data-background="assets/img/BANNIERE-CONTACTER-NOUS.jpg">
         <div class="overlay"></div>
         <div class="container">
@@ -79,6 +85,7 @@
     </section>
     <!-- ./ page-header -->
 
+    {{-- Bloc infos rapides : téléphone, email, adresse et horaires d'ouverture --}}
     <section class="contact-top-area pt-150 pb-150">
         <div class="container">
             <div class="row gy-lg-0 gy-4">
@@ -126,11 +133,13 @@
         </div>
     </section>
 
+    {{-- Formulaire de contact (envoi de message) et carte de localisation --}}
     <section class="contact-section pb-150">
         <div class="container">
             <div class="row gy-lg-0 gy-5">
                 <div class="col-lg-7 col-md-12">
                     <div class="contact-content">
+                        {{-- Formulaire d'envoi de message --}}
                         <div class="blog-contact-form form-2">
                             <div class="section-heading mb-30">
                                 <h2 class="section-title" data-text-animation data-split="word" data-duration="1">On
@@ -179,6 +188,7 @@
 
                                 <br> <br>
 
+                                {{-- Message de confirmation affiché après un envoi réussi du formulaire --}}
                                 @if (session('success'))
                                     <div class="alert alert-success">
                                         {{ session('success') }}
@@ -189,6 +199,7 @@
                         </div>
                     </div>
                 </div>
+                {{-- Carte Google Maps intégrée : localisation des bureaux --}}
                 <div class="col-lg-5">
                     <div class="map-wrapper">
                         <div class="container">

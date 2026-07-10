@@ -7,10 +7,11 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Exécute les migrations (création des tables).
      */
     public function up(): void
     {
+        // Table de la file d'attente (queue) des jobs en attente d'exécution
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('queue');
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->index(['queue', 'reserved_at', 'available_at']);
         });
 
+        // Table de suivi des lots (batches) de jobs, permettant de connaître leur progression globale
         Schema::create('job_batches', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('name');
@@ -36,6 +38,7 @@ return new class extends Migration
             $table->integer('finished_at')->nullable();
         });
 
+        // Table archivant les jobs ayant échoué, avec le détail de l'exception rencontrée
         Schema::create('failed_jobs', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();
@@ -48,7 +51,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Annule les migrations (suppression des tables créées ci-dessus).
      */
     public function down(): void
     {

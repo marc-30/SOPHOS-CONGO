@@ -1,4 +1,7 @@
+{{-- resources/views/inc/sidebar.blade.php --}}
+{{-- Panneau latéral (sidebar) ouvert via le bouton menu du header : présentation du cabinet et coordonnées --}}
 <div id="sidebar-area" class="sidebar-area">
+    {{-- Bouton de fermeture du panneau --}}
     <button class="sidebar-trigger close">
         <svg class="sidebar-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
             y="0px" width="16px" height="12.7px" viewBox="0 0 16 12.7" style="enable-background: new 0 0 16 12.7"
@@ -16,6 +19,7 @@
             <a class="dark-img" href="/"><img src="assets/img/logo/SOPHOS LOGO WEB.png" alt="logo"></a>
         </div>
         <div class="side-menu-wrap"></div>
+        {{-- Bloc "Qui sommes-nous" : courte présentation du cabinet --}}
         <div class="side-menu-about">
             <div class="side-menu-header">
                 <h3>Qui sommes nous ?</h3>
@@ -34,6 +38,7 @@
                 </span>
             </a> -->
         </div>
+        {{-- Bloc coordonnées : adresse, téléphone et email --}}
         <div class="side-menu-contact">
             <div class="side-menu-header">
                 <h3>Où nous trouver</h3>
@@ -53,6 +58,7 @@
                 </li>
             </ul>
         </div>
+        {{-- Liens vers les réseaux sociaux --}}
         <ul class="side-menu-social">
             <li class="facebook"><a href="https://www.facebook.com/profile.php?id=61588482088145" target="_blank"><i
                         class="fab fa-facebook-f"></i></a></li>
@@ -61,4 +67,4 @@
         </ul>
     </div>
 </div>
-<!--/.sidebar-area-->
+{{-- Fin du panneau latéral --}}

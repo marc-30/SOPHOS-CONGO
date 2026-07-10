@@ -4,13 +4,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Third Party Services
+    | Services tiers
     |--------------------------------------------------------------------------
     |
-    | This file is for storing the credentials for third party services such
-    | as Mailgun, Postmark, AWS and more. This file provides the de facto
-    | location for this type of information, allowing packages to have
-    | a conventional file to locate the various service credentials.
+    | Ce fichier sert à stocker les identifiants des services tiers tels que
+    | Mailgun, Postmark, AWS et bien d'autres. Ce fichier constitue
+    | l'emplacement de facto pour ce type d'information, permettant aux
+    | packages de disposer d'un fichier conventionnel où localiser les
+    | différents identifiants de service.
     |
     */
 
@@ -28,6 +29,7 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    // Identifiants utilisés pour l'envoi des notifications vers Slack (canal de notifications applicatives).
     'slack' => [
         'notifications' => [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),

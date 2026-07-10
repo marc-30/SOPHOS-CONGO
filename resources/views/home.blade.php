@@ -1,9 +1,10 @@
-<!-- resources/views/home.blade.php -->
+{{-- resources/views/home.blade.php --}}
+{{-- Page d'accueil du site Sophos Congo --}}
 <x-layout
     title="Sophos Congo — Cabinet de Transformation Digitale, Communication & IA à Brazzaville"
     description="Sophos Congo est un cabinet de transformation digitale et d'intelligence artificielle à Brazzaville : conseil stratégique, communication institutionnelle, nation branding, création de contenus et formation."
 >
-    <!-- Preloader -->
+    {{-- Écran de chargement affiché le temps que la page se charge --}}
     <div id="preloader">
         <div id="container" class="container-preloader">
             <div class="preloader-anim">
@@ -14,8 +15,10 @@
         </div>
     </div>
 
+    {{-- En-tête / barre de navigation principale --}}
     @include('inc.header')
 
+    {{-- Fenêtre popup de recherche (ouverte via l'icône loupe du header) --}}
     <div id="popup-search-box">
         <div class="box-inner-wrap d-flex align-items-center">
             <form id="form" action="#" method="get" role="search">
@@ -26,8 +29,10 @@
     </div>
     <!-- /#popup-search-box -->
 
+    {{-- Panneau latéral (sidebar) avec présentation et coordonnées --}}
     @include('inc.sidebar')
 
+    {{-- Menu mobile latéral (déroulé sur petits écrans) --}}
     <div class="mobile-side-menu">
         <div class="side-menu-content">
             <div class="side-menu-head">
@@ -65,12 +70,14 @@
     <!-- /.mobile-side-menu -->
     <div class="mobile-side-menu-overlay"></div>
 
+    {{-- Style spécifique à la vidéo de la bannière d'accueil --}}
     <style>
         .hero-video-box {
             position: relative;
         }
     </style>
 
+    {{-- Bannière vidéo d'accueil (hero) --}}
     <section class="hero-section hero-2">
         <div class="container hero-container">
             <div class="row">
@@ -86,6 +93,7 @@
     </section>
     <!-- ./ hero-section -->
 
+    {{-- Bandeau défilant (texte animé) mettant en avant l'espace coworking --}}
     <div class="running-text">
         <div class="carouselTicker carouselTicker-start" data-speed="fast">
             <ul class="text-anim carouselTicker__list">
@@ -101,6 +109,7 @@
     </div>
     <!-- ./ running-text -->
 
+    {{-- Section "Le Studio" : présentation du cabinet Sophos Congo --}}
     <section class="about-section pt-150 pb-150">
         <div class="container">
             <div class="row align-items-center">
@@ -159,6 +168,7 @@
     </section>
     <!-- ./ about-section -->
 
+    {{-- Carrousel des logos partenaires --}}
     <section class="sponsor-section pb-150">
         <div class="container">
             <div class="row align-items-center">
@@ -230,6 +240,7 @@
     </section>
     <!-- ./ sponsor-section -->
 
+    {{-- Aperçu des services (carrousel des 3 grandes offres) --}}
     <section class="service-section-2 pt-150 pb-150">
         <div class="container">
             <div class="section-heading text-center ">
@@ -394,7 +405,7 @@
     </section>
     <!-- ./ project-section -->
 
-
+    {{-- Blocs désactivés (témoignages clients, compteurs et vidéo de présentation) : conservés en commentaire pour une réactivation future --}}
 
     <!-- <section class="testimonial-section-2 pt-150 pb-150">
         {{-- <div class="container">
@@ -553,5 +564,6 @@
         </div> -->
         <!-- ./ video-section -->
 
+{{-- Bloc d'appel à l'action pour la réservation de l'espace coworking (footer commun) --}}
 @include('inc.coworking-cta')
 </x-layout>

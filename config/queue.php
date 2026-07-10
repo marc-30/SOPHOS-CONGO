@@ -4,12 +4,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Queue Connection Name
+    | Nom de la connexion de file d'attente par défaut
     |--------------------------------------------------------------------------
     |
-    | Laravel's queue supports a variety of backends via a single, unified
-    | API, giving you convenient access to each backend using identical
-    | syntax for each. The default queue connection is defined below.
+    | Le système de files d'attente de Laravel prend en charge une variété
+    | de moteurs (backends) via une API unique et unifiée, vous donnant un
+    | accès pratique à chaque moteur avec une syntaxe identique. La
+    | connexion de file d'attente par défaut est définie ci-dessous.
     |
     */
 
@@ -17,20 +18,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Queue Connections
+    | Connexions de files d'attente
     |--------------------------------------------------------------------------
     |
-    | Here you may configure the connection options for every queue backend
-    | used by your application. An example configuration is provided for
-    | each backend supported by Laravel. You're also free to add more.
+    | Vous pouvez ici configurer les options de connexion pour chaque
+    | moteur de file d'attente utilisé par votre application. Un exemple
+    | de configuration est fourni pour chaque moteur pris en charge par
+    | Laravel. Vous êtes également libre d'en ajouter d'autres.
     |
-    | Drivers: "sync", "database", "beanstalkd", "sqs", "redis",
-    |          "deferred", "background", "failover", "null"
+    | Pilotes : "sync", "database", "beanstalkd", "sqs", "redis",
+    |           "deferred", "background", "failover", "null"
     |
     */
 
     'connections' => [
 
+        // Exécute les jobs immédiatement et de manière synchrone (pas de véritable file d'attente).
         'sync' => [
             'driver' => 'sync',
         ],
@@ -73,14 +76,17 @@ return [
             'after_commit' => false,
         ],
 
+        // Exécute le job de manière asynchrone différée, sans passer par un moteur de file d'attente classique.
         'deferred' => [
             'driver' => 'deferred',
         ],
 
+        // Exécute le job en arrière-plan (background) après la réponse envoyée au client.
         'background' => [
             'driver' => 'background',
         ],
 
+        // Bascule vers la connexion suivante de la liste en cas d'échec de la première.
         'failover' => [
             'driver' => 'failover',
             'connections' => [
@@ -93,12 +99,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Job Batching
+    | Regroupement de jobs (Job Batching)
     |--------------------------------------------------------------------------
     |
-    | The following options configure the database and table that store job
-    | batching information. These options can be updated to any database
-    | connection and table which has been defined by your application.
+    | Les options suivantes configurent la base de données et la table qui
+    | stockent les informations de regroupement de jobs. Ces options
+    | peuvent être mises à jour vers n'importe quelle connexion et table
+    | de base de données définie par votre application.
     |
     */
 
@@ -109,14 +116,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Failed Queue Jobs
+    | Jobs de file d'attente échoués
     |--------------------------------------------------------------------------
     |
-    | These options configure the behavior of failed queue job logging so you
-    | can control how and where failed jobs are stored. Laravel ships with
-    | support for storing failed jobs in a simple file or in a database.
+    | Ces options configurent le comportement de la journalisation des jobs
+    | de file d'attente échoués, afin que vous puissiez contrôler comment
+    | et où les jobs échoués sont stockés. Laravel prend en charge le
+    | stockage des jobs échoués dans un simple fichier ou dans une base de
+    | données.
     |
-    | Supported drivers: "database-uuids", "dynamodb", "file", "null"
+    | Pilotes pris en charge : "database-uuids", "dynamodb", "file", "null"
     |
     */
 

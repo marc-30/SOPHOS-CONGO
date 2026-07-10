@@ -1,4 +1,5 @@
-<!-- resources/views/components/layout.blade.php -->
+{{-- Page d'erreur "habillée" reprenant le design complet du site (contrairement à errors::layout qui est minimaliste) --}}
+{{-- Fichier d'origine : resources/views/components/layout.blade.php (mise en page générale du site, réutilisée ici pour les pages d'erreur) --}}
 <!DOCTYPE html>
 <html class="no-js" lang="fr">
 
@@ -8,13 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <!-- Site Title -->
+    {{-- Titre de la page (onglet du navigateur) --}}
     <title>@yield('title')</title>
 
-    <!-- Place favicon.ico in the root directory -->
+    {{-- Favicon à placer à la racine du dossier public --}}
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
 
-    <!-- CSS here -->
+    {{-- Feuilles de style CSS du thème --}}
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/venobox.min.css') }}">
@@ -27,7 +28,7 @@
 
 <body>
 
-    <!-- Preloader -->
+    {{-- Écran de préchargement affiché pendant le chargement de la page --}}
     <div id="preloader">
         <div id="container" class="container-preloader">
             <div class="preloader-anim">
@@ -38,11 +39,12 @@
         </div>
     </div>
 
-    <!-- header-area-start -->
+    {{-- Début de la zone d'en-tête : inclusion du header commun du site --}}
     @include('inc.header')
 
-    <!-- /.Main Header -->
+    {{-- Fin de l'en-tête principal --}}
 
+    {{-- Boîte de recherche en pop-up (masquée par défaut, ouverte via JS) --}}
     <div id="popup-search-box">
         <div class="box-inner-wrap d-flex align-items-center">
             <form id="form" action="#" method="get" role="search">
@@ -51,13 +53,14 @@
             <div class="search-close"><i class="fa-sharp fa-regular fa-xmark"></i></div>
         </div>
     </div>
-    <!-- /#popup-search-box -->
+    {{-- Fin de la boîte de recherche en pop-up --}}
 
-    
 
-    <!-- /.mobile-side-menu -->
+
+    {{-- Fond assombri affiché derrière le menu mobile lorsqu'il est ouvert --}}
     <div class="mobile-side-menu-overlay"></div>
 
+    {{-- Bandeau d'en-tête de page affichant le code d'erreur, le message et le fil d'Ariane --}}
     <section class="page-header" data-background="{{ asset('assets/img/SERVICE-FOOTER.jpg') }}">
         <div class="overlay"></div>
         <div class="container">
@@ -68,8 +71,9 @@
             </div>
         </div>
     </section>
-    <!-- ./ page-header -->
+    {{-- Fin du bandeau d'en-tête de page --}}
 
+    {{-- Section principale de l'erreur : bouton de retour vers la page d'accueil --}}
     <section class="error-section pt-130 pb-130">
         <div class="container">
             <div class="error-content text-center">
@@ -85,16 +89,19 @@
             </div>
         </div>
     </section>
-    <!-- ./ error-section -->
+    {{-- Fin de la section principale de l'erreur --}}
 
 
+    {{-- Pied de page complet du site (identique sur toutes les pages, y compris les pages d'erreur) --}}
     <footer class="footer-section overflow-hidden">
         <div class="container">
+           {{-- Bloc de titre du footer désactivé (laissé en commentaire dans le HTML d'origine, non utilisé) --}}
            <!--  <div class="footer-text text-center">
                 <h3 class="footer-header">Sophos Congo <a href="/contact" class="contact-btn"><i
                             class="fa-regular fa-arrow-right"></i></a></h3>
             </div> -->
             <div class="row footer-wrap">
+                {{-- Colonne 1 : logo, accroche et réseaux sociaux --}}
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
                         <div class="widget-header">
@@ -119,6 +126,7 @@
                         </ul>
                     </div>
                 </div>
+                {{-- Colonne 2 : liste des services proposés --}}
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget footer-col-2">
                         <div class="widget-header">
@@ -133,6 +141,7 @@
                         </ul>
                     </div>
                 </div>
+                {{-- Colonne 3 : coordonnées de l'entreprise --}}
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
                         <div class="widget-header">
@@ -145,6 +154,7 @@
                         </ul>
                     </div>
                 </div>
+                {{-- Colonne 4 : formulaire d'inscription à la newsletter --}}
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
                         <div class="widget-header">
@@ -168,6 +178,7 @@
                 </div>
             </div>
         </div>
+        {{-- Bandeau de copyright et liens légaux en bas de page --}}
         <div class="copyright-area">
             <div class="container">
                 <div class="row copyright-content">
@@ -184,12 +195,13 @@
             </div>
         </div>
     </footer>
-    <!-- ./ footer-section -->
+    {{-- Fin du pied de page --}}
 
+    {{-- Indicateur de progression du scroll (rempli/affiché via JS) --}}
     <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
-    <!--scrollup-->
+    {{-- Bouton "remonter en haut de page" --}}
 
-    <!-- JS here -->
+    {{-- Scripts JavaScript : bibliothèques tierces puis scripts propres au site --}}
     <script src="{{ asset('assets/js/vendor/jquary-3.7.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/bootstrap-bundle.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/imagesloaded-pkgd.js') }}"></script>
@@ -205,6 +217,7 @@
     <script src="{{ asset('assets/js/vendor/smooth-scroll.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/jquery.carouselTicker.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/nice-select.js') }}"></script>
+    {{-- Scripts spécifiques au site (formulaire de contact, comportements généraux) --}}
     <script src="{{ asset('assets/js/contact.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>

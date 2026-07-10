@@ -7,16 +7,18 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Exécute les migrations (création des tables).
      */
     public function up(): void
     {
+        // Table utilisée par le driver de cache "database" pour stocker les valeurs mises en cache
         Schema::create('cache', function (Blueprint $table) {
             $table->string('key')->primary();
             $table->mediumText('value');
             $table->integer('expiration')->index();
         });
 
+        // Table utilisée pour gérer les verrous (locks) de cache, évitant les accès concurrents
         Schema::create('cache_locks', function (Blueprint $table) {
             $table->string('key')->primary();
             $table->string('owner');
@@ -25,7 +27,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Annule les migrations (suppression des tables créées ci-dessus).
      */
     public function down(): void
     {

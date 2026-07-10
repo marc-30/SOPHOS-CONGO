@@ -2,47 +2,49 @@
 *
 * Contact JS
 * @ThemeEaster
+* Gère l'envoi du formulaire de contact en AJAX (sans rechargement de page)
+* et l'affichage des messages de succès/erreur retournés par le serveur.
 */
 $(function() {
-    // Get the form.
+    // Récupère le formulaire de contact.
     var form = $('#ajax_contact');
 
-    // Get the messages div.
+    // Récupère la div destinée à afficher les messages de retour (succès/erreur).
     var formMessages = $('#form-messages');
 
-    // Set up an event listener for the contact form.
+    // Met en place l'écouteur d'événement sur la soumission du formulaire de contact.
 	$(form).submit(function(event) {
-		// Stop the browser from submitting the form.
+		// Empêche le navigateur de soumettre le formulaire de façon classique (rechargement).
 		event.preventDefault();
 
-		// Serialize the form data.
+		// Sérialise les données du formulaire (transforme les champs en chaîne de requête).
 		var formData = $(form).serialize();
-		// Submit the form using AJAX.
+		// Envoie les données du formulaire via une requête AJAX.
 		$.ajax({
 			type: 'POST',
 			url: $(form).attr('action'),
 			data: formData
 		})
 		.done(function(response) {
-			// Make sure that the formMessages div has the 'success' class.
+			// Cas de succès : s'assure que la div des messages porte la classe 'success'.
 			$(formMessages).removeClass('alert-danger');
 			$(formMessages).addClass('alert-success');
 
-			// Set the message text.
+			// Affiche le message de succès renvoyé par le serveur.
 			$(formMessages).text(response);
 
-			// Clear the form.
+			// Réinitialise les champs du formulaire.
 			$('#fullname').val('');
 			$('#email').val('');
 			$('#phone').val('');
 			$('#message').val('');
 		})
 		.fail(function(data) {
-			// Make sure that the formMessages div has the 'error' class.
+			// Cas d'échec : s'assure que la div des messages porte la classe 'error'.
 			$(formMessages).removeClass('alert-success');
 			$(formMessages).addClass('alert-danger');
 
-			// Set the message text.
+			// Affiche le message d'erreur renvoyé par le serveur (ou un message générique).
 			if (data.responseText !== '') {
 				$(formMessages).text(data.responseText);
 			} else {

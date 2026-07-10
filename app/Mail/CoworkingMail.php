@@ -4,8 +4,10 @@ namespace App\Mail;
 
 use Illuminate\Mail\Mailable;
 
+// Représente l'e-mail envoyé lors d'une demande de réservation d'espace de coworking
 class CoworkingMail extends Mailable
 {
+    // Données de la demande de réservation (nom, métier, commune, espace choisi, durée, prix, etc.)
     public array $data;
 
     public function __construct(array $data)
@@ -13,6 +15,7 @@ class CoworkingMail extends Mailable
         $this->data = $data;
     }
 
+    // Construit l'e-mail : le sujet inclut le nom du demandeur, avec le template dédié
     public function build()
     {
         return $this->subject('Nouvelle demande de coworking — ' . $this->data['fullname'])

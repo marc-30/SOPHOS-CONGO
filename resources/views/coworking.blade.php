@@ -1,8 +1,11 @@
+{{-- resources/views/coworking.blade.php --}}
+{{-- Page "Espace Coworking" (Sophos Spaces) : présentation des formules et formulaire de réservation --}}
 <x-layout
     title="Espace Coworking Brazzaville — Sophos Spaces | Sophos Congo"
     description="Réservez votre espace de coworking à Brazzaville avec Sophos Spaces : salles climatisées, bureaux privés, terrasses aérées et salles de réunion, par le cabinet de transformation digitale Sophos Congo."
 >
 
+    {{-- Styles propres aux cartes de formules, boutons de durée, select personnalisé et résumé de sélection --}}
     <style>
         /* ══════════════════════════════════════
            CARDS FORMULE — Premium épuré
@@ -219,8 +222,10 @@
         </div>
     </div>
 
+    {{-- En-tête / barre de navigation principale --}}
     @include('inc.header')
 
+    {{-- Fenêtre popup de recherche (ouverte via l'icône loupe du header) --}}
     <div id="popup-search-box">
         <div class="box-inner-wrap d-flex align-items-center">
             <form id="form" action="#" method="get" role="search">
@@ -230,8 +235,10 @@
         </div>
     </div>
 
+    {{-- Panneau latéral (sidebar) avec présentation et coordonnées --}}
     @include('inc.sidebar')
 
+    {{-- Menu mobile latéral (déroulé sur petits écrans) --}}
     <div class="mobile-side-menu">
         <div class="side-menu-content">
             <div class="side-menu-head">
@@ -255,7 +262,7 @@
     </div>
     <div class="mobile-side-menu-overlay"></div>
 
-    <!-- Bannière -->
+    {{-- Bannière d'en-tête de la page Coworking --}}
     <section class="page-header" data-background="{{ asset('assets/img/BANNIERE-CONTACTER-NOUS.jpg') }}">
         <div class="overlay"></div>
         <div class="container">
@@ -269,7 +276,7 @@
         </div>
     </section>
 
-    <!-- Infos rapides -->
+    {{-- Infos rapides : aperçu des formules et prix de départ --}}
     <section class="contact-top-area pt-150 pb-80">
         <div class="container">
             <div class="row gy-lg-0 gy-4">
@@ -301,7 +308,7 @@
         </div>
     </section>
 
-    <!-- Formulaire -->
+    {{-- Formulaire de réservation coworking : infos personnelles, choix de la formule/durée et envoi de la demande --}}
     <section class="contact-section pb-150">
         <div class="container">
             <div class="row justify-content-center">
@@ -521,6 +528,7 @@
         </div>
     </section>
 
+    {{-- Script de la page : gère le select personnalisé "commune", la sélection formule/durée, le résumé et la validation avant envoi --}}
     <script>
     (function () {
 

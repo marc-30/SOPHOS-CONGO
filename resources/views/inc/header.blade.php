@@ -1,13 +1,16 @@
- <!-- header-area-start -->
+ {{-- resources/views/inc/header.blade.php --}}
+ {{-- En-tête / barre de navigation principale, incluse en haut de chaque page --}}
  <header class="header sticky-active">
      <div class="primary-header">
          <div class="header-wrap">
              <div class="primary-header-inner">
+                 {{-- Logo du cabinet, lien vers l'accueil --}}
                  <div class="header-logo d-lg-block">
                      <a href="/">
                          <img src="{{ asset('assets/img/logo/SOPHOS LOGO WEB.png') }}" alt="logo">
                      </a>
                  </div>
+                 {{-- Menu de navigation principal --}}
                  <div class="header-menu-wrap">
                      <div class="mobile-menu-items">
                          <ul>
@@ -26,6 +29,7 @@
                      </div>
                  </div>
                  <!-- /.header-menu-wrap -->
+                 {{-- Zone droite du header : bouton menu latéral et icône menu mobile --}}
                  <div class="header-right-wrap">
                      <div class="header-right">
                          <!-- <div class="header-btn-wrap">
@@ -56,4 +60,4 @@
          </div>
      </div>
  </header>
- <!-- /.Main Header -->
+ {{-- Fin de l'en-tête principal --}}

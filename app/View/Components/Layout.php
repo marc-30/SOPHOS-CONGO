@@ -6,11 +6,13 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
+// Composant Blade de mise en page commune (layout) utilisé par toutes les pages du site
 class Layout extends Component
 {
+    // Titre de la page, affiché notamment dans la balise <title> du layout
     public string $title;
     /**
-     * Create a new component instance.
+     * Crée une nouvelle instance du composant, avec un titre par défaut si non précisé.
      */
     public function __construct(string $title = 'Sophos Congo')
     {
@@ -18,7 +20,7 @@ class Layout extends Component
     }
 
     /**
-     * Get the view / contents that represent the component.
+     * Retourne la vue associée à ce composant (le template Blade du layout).
      */
     public function render(): View|Closure|string
     {

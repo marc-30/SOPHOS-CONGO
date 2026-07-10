@@ -7,13 +7,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Database Connection Name
+    | Nom de la connexion à la base de données par défaut
     |--------------------------------------------------------------------------
     |
-    | Here you may specify which of the database connections below you wish
-    | to use as your default connection for database operations. This is
-    | the connection which will be utilized unless another connection
-    | is explicitly specified when you execute a query / statement.
+    | Vous pouvez ici spécifier laquelle des connexions de base de données
+    | ci-dessous vous souhaitez utiliser comme connexion par défaut pour les
+    | opérations de base de données. C'est cette connexion qui sera utilisée
+    | à moins qu'une autre connexion ne soit explicitement spécifiée lors de
+    | l'exécution d'une requête / instruction.
     |
     */
 
@@ -21,12 +22,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Database Connections
+    | Connexions à la base de données
     |--------------------------------------------------------------------------
     |
-    | Below are all of the database connections defined for your application.
-    | An example configuration is provided for each database system which
-    | is supported by Laravel. You're free to add / remove connections.
+    | Ci-dessous se trouvent toutes les connexions de base de données
+    | définies pour votre application. Un exemple de configuration est
+    | fourni pour chaque système de base de données pris en charge par
+    | Laravel. Vous êtes libre d'ajouter / supprimer des connexions.
     |
     */
 
@@ -59,6 +61,7 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
+            // Configure le certificat SSL utilisé pour sécuriser la connexion à MySQL, si l'extension pdo_mysql est chargée.
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 (PHP_VERSION_ID >= 80500 ? Mysql::ATTR_SSL_CA : PDO::MYSQL_ATTR_SSL_CA) => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
@@ -79,6 +82,7 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
+            // Configure le certificat SSL utilisé pour sécuriser la connexion à MariaDB, si l'extension pdo_mysql est chargée.
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 (PHP_VERSION_ID >= 80500 ? Mysql::ATTR_SSL_CA : PDO::MYSQL_ATTR_SSL_CA) => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
@@ -118,12 +122,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Migration Repository Table
+    | Table du dépôt de migrations
     |--------------------------------------------------------------------------
     |
-    | This table keeps track of all the migrations that have already run for
-    | your application. Using this information, we can determine which of
-    | the migrations on disk haven't actually been run on the database.
+    | Cette table garde une trace de toutes les migrations qui ont déjà été
+    | exécutées pour votre application. Grâce à cette information, nous
+    | pouvons déterminer lesquelles des migrations présentes sur le disque
+    | n'ont pas encore été exécutées sur la base de données.
     |
     */
 
@@ -134,12 +139,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Redis Databases
+    | Bases de données Redis
     |--------------------------------------------------------------------------
     |
-    | Redis is an open source, fast, and advanced key-value store that also
-    | provides a richer body of commands than a typical key-value system
-    | such as Memcached. You may define your connection settings here.
+    | Redis est un système de stockage clé-valeur open source, rapide et
+    | avancé, qui offre également un ensemble de commandes plus riche
+    | qu'un système clé-valeur classique tel que Memcached. Vous pouvez
+    | définir ici vos paramètres de connexion.
     |
     */
 

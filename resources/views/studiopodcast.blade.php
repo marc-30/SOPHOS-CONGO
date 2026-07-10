@@ -1,10 +1,11 @@
-<!-- resources/views/home.blade.php -->
+{{-- resources/views/studiopodcast.blade.php --}}
+{{-- Page "Studio Podcast" : présentation des studios média disponibles à la location --}}
 <x-layout
     title="Location Studio Podcast à Brazzaville | Sophos Congo"
     description="Louez un studio média & podcast entièrement équipé à Brazzaville pour vos enregistrements, interviews et webinaires, avec Sophos Congo, cabinet de transformation digitale."
 >
 
-    <!-- Preloader -->
+    {{-- Écran de chargement affiché le temps que la page se charge --}}
     <div id="preloader">
         <div id="container" class="container-preloader">
             <div class="preloader-anim">
@@ -15,8 +16,10 @@
         </div>
     </div>
 
+    {{-- En-tête / barre de navigation principale --}}
     @include('inc.header')
 
+    {{-- Fenêtre popup de recherche (ouverte via l'icône loupe du header) --}}
     <div id="popup-search-box">
         <div class="box-inner-wrap d-flex align-items-center">
             <form id="form" action="#" method="get" role="search">
@@ -27,8 +30,10 @@
     </div>
     <!-- /#popup-search-box -->
 
+    {{-- Panneau latéral (sidebar) avec présentation et coordonnées --}}
     @include('inc.sidebar')
 
+    {{-- Menu mobile latéral (déroulé sur petits écrans) --}}
     <div class="mobile-side-menu">
         <div class="side-menu-content">
             <div class="side-menu-head">
@@ -66,6 +71,7 @@
     <!-- /.mobile-side-menu -->
     <div class="mobile-side-menu-overlay"></div>
 
+    {{-- Bannière d'en-tête de la page Studios Podcast --}}
     <section class="page-header" data-background="assets/img/studiopodcast.jpg">
         <div class="overlay"></div>
         <div class="container">
@@ -78,7 +84,7 @@
     </section>
     <!-- ./ page-header -->
 
-
+    {{-- Carrousel présentant les différents studios podcast disponibles à la location --}}
 <section class="project-section pt-150 pb-150 overflow-hidden">
         <div class="container">
             <div class="project-top heading-space">
@@ -169,7 +175,7 @@
         </div>
     </section>
 
-
+{{-- Bandeau défilant (texte animé) : lien de téléchargement du catalogue des studios --}}
 <div class="running-text">
         <div class="carouselTicker carouselTicker-start   data-speed="fast">
             <ul class="text-anim carouselTicker__list ">
@@ -181,7 +187,7 @@
         </div>
     </div>
 
-
+{{-- Blocs désactivés (anciens portfolios de démonstration du template) : conservés en commentaire, non utilisés sur cette page --}}
 
 
 
@@ -408,5 +414,6 @@
                             </div>
                         </div> -->
 
+{{-- Bloc d'appel à l'action pour la réservation de l'espace coworking (footer commun) --}}
 @include('inc.coworking-cta')
 </x-layout>
