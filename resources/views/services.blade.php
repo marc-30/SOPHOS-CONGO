@@ -1,5 +1,8 @@
 <!-- resources/views/home.blade.php -->
-<x-layout title="Services">
+<x-layout
+    title="Nos Services — Transformation Digitale, IA & Communication | Sophos Congo"
+    description="Découvrez les services du cabinet de transformation digitale Sophos Congo : stratégie de communication, transformation digitale & IA, nation branding, création de contenus, formation et consulting à Brazzaville."
+>
 
     <!-- Preloader -->
     <div id="preloader">
@@ -40,11 +43,11 @@
                 <ul class="side-menu-list">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Abidjan, Cocody, Angré cité sir, </p>
+                        <p>Ravin du Tchad, Plateau, Brazzaville, </p>
                     </li>
                     <li>
                         <i class="fas fa-phone"></i>
-                        <a href="tel:+2250716119095">+225 07 16 119 095</a>
+                        <a href="tel:+242067768642">+242 06 776 86 42</a>
                     </li>
                     <li>
                         <i class="fas fa-envelope-open-text"></i>
@@ -67,8 +70,8 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content text-center">
-                <h1 class="title">Services </h1>
-                <h4 class="sub-title"><a class="home" href="i/">Accueil </a><span></span><a
+                <h1 class="title">Nos Services de Transformation Digitale</h1>
+                <h4 class="sub-title"><a class="home" href="/">Accueil </a><span></span><a
                         class="inner-page" href="/services"> Services </a></h4>
             </div>
         </div>
@@ -80,86 +83,78 @@
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="assets/img/LES ICONS-01.png" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-01.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
-                            <h3 class="title"><a href="#">Marketing <span>Digital</span></a></h3>
-                            <p>Le marketing digital est un levier puissant <br> qui transforme votre présence en ligne
-                                <br> en opportunités de croissance réelles et mesurables.</p>
+                            <h3 class="title"><a href="#">Stratégie <span>de Communication</span></a></h3>
+                            <p>Audit de communication, diagnostic de marque, <br> élaboration de stratégies 360° et
+                                <br> accompagnement des dirigeants et décideurs.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="assets/img/LES ICONS-02.png" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-02.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
-                            <h3 class="title"><a href="#">Identité Visuelle <span>& Branding</span></a>
+                            <h3 class="title"><a href="#">Communication <span>Institutionnelle & Corporate</span></a>
                             </h3>
-                            <p>L'identité visuelle est bien plus qu'un logo <br> c'est l'âme de votre marque, <br> celle
-                                qui parle avant même que vous preniez la parole.</p>
+                            <p>Relations publiques et médias, communication <br> de crise et interne, valorisation
+                                <br> des réalisations et de l'impact des organisations.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="assets/img/LES ICONS-03.png" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-03.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
-                            <h3 class="title"><a href="#">Strategie <span>De communication</span></a></h3>
-                            <p>La stratégie de communication est l'art <br> de dire la bonne chose, au bon moment, <br>
-                                à la bonne audience — pour un impact maximal.</p>
+                            <h3 class="title"><a href="#">Nation Branding <span>& Marketing Territorial</span></a></h3>
+                            <p>Stratégie d'attractivité territoriale, promotion <br> des investissements et
+                                valorisation <br> du patrimoine culturel et des territoires.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="assets/img/LES ICONS-04.png" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-04.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
-                            <h3 class="title"><a href="#">CRÉATION DE CONTENU</a></h3>
-                            <p>La création de contenu est l’art de raconter votre histoire avec authenticité pour capter l’attention et fidéliser durablement votre audience.</p>
+                            <h3 class="title"><a href="#">TRANSFORMATION DIGITALE <span>& INTELLIGENCE ARTIFICIELLE</span></a></h3>
+                            <p>Marketing digital, développement web & mobile, UX/UI, intégration de solutions d'IA et vidéo marketing IA générative.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="assets/img/LES ICONS-05.png" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-05.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
-                            <h3 class="title"><a href="#">UI/UX DESIGN</a></h3>
-                            <p>Le UI/UX Design va bien au-delà de l’esthétique : il crée des interfaces intuitives et immersives qui transforment chaque interaction en expérience mémorable.</p>
+                            <h3 class="title"><a href="#">CRÉATION DE CONTENUS <span>& DE MARQUE</span></a></h3>
+                            <p>Identité visuelle, chartes graphiques, production vidéo et podcast, photographie, copywriting et personal branding.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="assets/img/LES ICONS-06.png" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-06.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
-                            <h3 class="title"><a href="#">DÉVELOPPEMENT D’APPLICATION</a></h3>
-                            <p>Le développement d’application concrétise vos idées en solutions mobiles et web performantes, intuitives et parfaitement adaptées à vos objectifs de croissance.</p>
+                            <h3 class="title"><a href="#">FORMATION <span>PROFESSIONNELLE</span></a></h3>
+                            <p>Programmes de formation en communication, marketing digital, IA appliquée et storytelling, en présentiel ou en intra-entreprise.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="assets/img/LES ICONS-01.png" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-07.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
-                            <h3 class="title"><a href="#">Location <span>de studio</span></a></h3>
-                            <p>Sophos, c’est aussi des studios modernes, équipés et prêts à l’emploi pour l’enregistrement de podcasts, émissions professionnelles, des lives, et des webinaires professionnels.</p>
+                            <h3 class="title"><a href="#">Consulting</a></h3>
+                            <p>Conseil stratégique en communication et transformation, <br> veille sectorielle et
+                                appui <br> à la préparation d'appels d'offres.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="assets/img/LES ICONS-02.png" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-08.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
-                            <h3 class="title"><a href="#">VIDEO MARKETING-IA</a></h3>
-                            <p>Le vidéo marketing-IA transforme une simple idée en contenu visuel percutant et ultra-personnalisé, qui parle directement à votre audience et accélère votre croissance.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="assets/img/LES ICONS-03.png" width="70" alt="service"></div>
-                        <div class="service-content">
-                            <h3 class="title"><a href="#">Sophos <span>Store</span></a></h3>
-                            <p>  Vente d'Équipements Multimédia   Service de Réparation Express <br>  Assistance & Maintenance Logicielle</p>
+                            <h3 class="title"><a href="/coworking">Sophos <span>Spaces</span></a></h3>
+                            <p>Studio média & podcast, salle de réunion, salle de formation et espace coworking, au cœur de Brazzaville.</p>
                         </div>
                     </div>
                 </div>
