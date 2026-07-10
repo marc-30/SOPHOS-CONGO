@@ -1,5 +1,8 @@
 <!-- resources/views/home.blade.php -->
-<x-layout title="Services">
+<x-layout
+    title="Location Studio Podcast à Brazzaville | Sophos Congo"
+    description="Louez un studio média & podcast entièrement équipé à Brazzaville pour vos enregistrements, interviews et webinaires, avec Sophos Congo, cabinet de transformation digitale."
+>
 
     <!-- Preloader -->
     <div id="preloader">
@@ -40,11 +43,11 @@
                 <ul class="side-menu-list">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Abidjan, Cocody, Angré cité sir, </p>
+                        <p>Ravin du Tchad, Plateau, Brazzaville, </p>
                     </li>
                     <li>
                         <i class="fas fa-phone"></i>
-                        <a href="tel:+2250716119095">+225 07 16 119 095</a>
+                        <a href="tel:+242067768642">+242 06 776 86 42</a>
                     </li>
                     <li>
                         <i class="fas fa-envelope-open-text"></i>

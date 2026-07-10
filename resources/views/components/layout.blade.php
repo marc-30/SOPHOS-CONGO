@@ -1,4 +1,8 @@
 <!-- resources/views/components/layout.blade.php -->
+@props([
+    'title' => 'Sophos Congo — Cabinet de Transformation Digitale, Communication & IA à Brazzaville',
+    'description' => "Sophos Congo, cabinet de transformation digitale et d'intelligence artificielle à Brazzaville : conseil stratégique, communication institutionnelle, nation branding, création de contenus et formation professionnelle.",
+])
 <!DOCTYPE html>
 <html class="no-js" lang="fr">
 
@@ -6,10 +10,55 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="keywords" content="cabinet de transformation digitale, transformation digitale, transformation digitale Congo, transformation digitale Brazzaville, intelligence artificielle Congo, agence communication Brazzaville, Sophos Congo">
+    <meta name="description" content="{{ $description }}">
+    <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Site Title -->
-    <title>Sophos Congo, Agence de communication & Marketing digital</title>
+    <title>{{ $title }}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sophos Congo">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('assets/img/logo/SOPHOS LOGO WEB.png') }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image" content="{{ asset('assets/img/logo/SOPHOS LOGO WEB.png') }}">
+
+    <!-- Données structurées -->
+    @php
+        $structuredData = [
+            '@context' => 'https://schema.org',
+            '@type' => 'ProfessionalService',
+            'name' => 'Sophos Congo',
+            'alternateName' => 'Sophos Congo — Cabinet de Transformation Digitale',
+            'description' => "Cabinet de transformation digitale et d'intelligence artificielle à Brazzaville, proposant conseil stratégique, communication institutionnelle, nation branding, création de contenus et formation professionnelle.",
+            'url' => url('/'),
+            'logo' => asset('assets/img/logo/SOPHOS LOGO WEB.png'),
+            'image' => asset('assets/img/logo/SOPHOS LOGO WEB.png'),
+            'telephone' => '+242067768642',
+            'email' => 'info@sophoscongo.com',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => 'Ravin du Tchad, Impasse Eugène Etienne, Plateau / Centre Ville',
+                'addressLocality' => 'Brazzaville',
+                'addressCountry' => 'CG',
+            ],
+            'areaServed' => 'CG',
+            'sameAs' => [
+                'https://www.facebook.com/profile.php?id=61588482088145',
+                'https://www.instagram.com/sophoscongoci/',
+            ],
+        ];
+    @endphp
+    <script type="application/ld+json">{!! json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
 
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -68,11 +117,11 @@
                             <h3 class="widget-title">Services</h3>
                         </div>
                         <ul class="footer-list">
-                            <li><a href="/services">Strategie de communication</a></li>
-                            <li><a href="/services">Marketing digital</a></li>
-                            <li><a href="/services">Web Development</a></li>
-                            <li><a href="/services">Identité visuelle & Branding </a></li>
-                            <li><a href="/services">Location de Studio</a></li>
+                            <li><a href="/services">Stratégie de communication</a></li>
+                            <li><a href="/services">Communication institutionnelle</a></li>
+                            <li><a href="/services">Transformation digitale & IA</a></li>
+                            <li><a href="/services">Création de contenus & de marque</a></li>
+                            <li><a href="/coworking">Sophos Spaces</a></li>
                         </ul>
                     </div>
                 </div>
@@ -82,8 +131,8 @@
                             <h3 class="widget-title">Où nous trouver</h3>
                         </div>
                         <ul class="address-list">
-                            <li>Abidjan, Cocody, Angré cité sir.</li>
-                            <li><a href="tel:+2250716119095">+225 07 16 119 095</a></li>
+                            <li>Ravin du Tchad, Plateau, Brazzaville.</li>
+                            <li><a href="tel:+242067768642">+242 06 776 86 42</a></li>
                             <li><a href="mailto:info@sophoscongo.com">Info@sophoscongo.com</a></li>
                         </ul>
                     </div>
