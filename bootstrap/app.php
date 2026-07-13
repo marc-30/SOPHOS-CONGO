@@ -16,7 +16,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        // Emplacement pour enregistrer ou configurer des middlewares personnalisés (aucun pour l'instant)
+        // Fait confiance au proxy inverse (Render, etc.) : lit les en-têtes X-Forwarded-*
+        // pour que Laravel sache que la requête d'origine est en HTTPS, et genere donc
+        // des URLs (assets, canonical, etc.) en https:// au lieu de http:// (evite le
+        // blocage "contenu mixte" par le navigateur).
+        $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         // Emplacement pour personnaliser la gestion des exceptions (aucune personnalisation pour l'instant)
