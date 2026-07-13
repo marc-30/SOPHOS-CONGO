@@ -90,6 +90,26 @@
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
+                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-04.png') }}" width="70" alt="service"></div>
+                        <div class="service-content">
+                            <h3 class="title"><a href="#">TRANSFORMATION DIGITALE <span>& INTELLIGENCE ARTIFICIELLE</span></a></h3>
+                            <p>Marketing digital, développement web & mobile, UX/UI, intégration de solutions d'IA et vidéo marketing IA générative.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item-2 service-item-3">
+                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-07.png') }}" width="70" alt="service"></div>
+                        <div class="service-content">
+                            <h3 class="title"><a href="#">Consulting</a></h3>
+                            <p>Conseil stratégique en communication et transformation, <br> veille sectorielle et
+                                appui <br> à la préparation d'appels d'offres.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item-2 service-item-3">
                         <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-01.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
                             <h3 class="title"><a href="#">Stratégie <span>de Communication</span></a></h3>
@@ -119,15 +139,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-04.png') }}" width="70" alt="service"></div>
-                        <div class="service-content">
-                            <h3 class="title"><a href="#">TRANSFORMATION DIGITALE <span>& INTELLIGENCE ARTIFICIELLE</span></a></h3>
-                            <p>Marketing digital, développement web & mobile, UX/UI, intégration de solutions d'IA et vidéo marketing IA générative.</p>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
                         <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-05.png') }}" width="70" alt="service"></div>
@@ -146,16 +158,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-07.png') }}" width="70" alt="service"></div>
-                        <div class="service-content">
-                            <h3 class="title"><a href="#">Consulting</a></h3>
-                            <p>Conseil stratégique en communication et transformation, <br> veille sectorielle et
-                                appui <br> à la préparation d'appels d'offres.</p>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
                         <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-08.png') }}" width="70" alt="service"></div>
