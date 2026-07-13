@@ -72,18 +72,22 @@
     <!-- /.mobile-side-menu -->
     <div class="mobile-side-menu-overlay"></div>
 
-    {{-- Bannière d'en-tête de la page Contact --}}
-    <section class="page-header" data-background="assets/img/BANNIERE-CONTACTER-NOUS.jpg">
+    {{-- Bannière d'en-tête de la page Contact (image seule) --}}
+    <section class="page-header" data-background="assets/img/BANNIERE-CONTACTER-NOUS.jpg" style="height: 320px;">
         <div class="overlay"></div>
+    </section>
+    <!-- ./ page-header -->
+
+    {{-- Titre de la page, place entre la banniere et le reste du contenu --}}
+    <section class="page-header">
         <div class="container">
-            <div class="page-header-content text-center">
+            <div class="page-header-content text-center" style="padding: 60px 0 40px 0;">
                 <h1 class="title">Contactez <span>Nous</span></h1>
                 <h4 class="sub-title"><a class="home" href="/">Accueil </a><span></span><a class="inner-page"
                         href="#">Créons ensemble</a></h4>
             </div>
         </div>
     </section>
-    <!-- ./ page-header -->
 
     {{-- Bloc infos rapides : téléphone, email, adresse et horaires d'ouverture --}}
     <section class="contact-top-area pt-150 pb-150">
