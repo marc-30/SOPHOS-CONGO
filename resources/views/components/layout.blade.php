@@ -46,7 +46,7 @@
             'logo' => asset('assets/img/logo/SOPHOS LOGO WEB.png'),
             'image' => asset('assets/img/logo/SOPHOS LOGO WEB.png'),
             'telephone' => '+242067768642',
-            'email' => 'info@sophoscongo.com',
+            'email' => 'contact@sophoscongo.com',
             'address' => [
                 '@type' => 'PostalAddress',
                 'streetAddress' => 'Ravin du Tchad, Impasse Eugène Etienne, Plateau / Centre Ville',
@@ -141,7 +141,7 @@
                         <ul class="address-list">
                             <li>Ravin du Tchad, Plateau, Brazzaville.</li>
                             <li><a href="tel:+242067768642">+242 06 776 86 42</a></li>
-                            <li><a href="mailto:info@sophoscongo.com">Info@sophoscongo.com</a></li>
+                            <li><a href="mailto:contact@sophoscongo.com">contact@sophoscongo.com</a></li>
                         </ul>
                     </div>
                 </div>

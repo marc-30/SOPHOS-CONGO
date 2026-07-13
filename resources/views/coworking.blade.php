@@ -251,7 +251,7 @@
                 <ul class="side-menu-list">
                     <li><i class="fas fa-map-marker-alt"></i><p>Ravin du Tchad, Plateau, Brazzaville.</p></li>
                     <li><i class="fas fa-phone"></i><a href="tel:+242067768642">+242 06 776 86 42</a></li>
-                    <li><i class="fas fa-envelope-open-text"></i><a href="mailto:Info@sophoscongo.com">Info@sophoscongo.com</a></li>
+                    <li><i class="fas fa-envelope-open-text"></i><a href="mailto:contact@sophoscongo.com">contact@sophoscongo.com</a></li>
                 </ul>
             </div>
             <ul class="side-menu-social">

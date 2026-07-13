@@ -52,7 +52,7 @@ class CoworkingController extends Controller
         $data['prix']         = $this->prices[$data['espace']][$data['duree']] . ' FCFA';
 
         // Envoi de la demande de réservation par e-mail à l'équipe Sophos Congo
-        Mail::to('info@sophoscongo.com')->send(new CoworkingMail($data));
+        Mail::to('contact@sophoscongo.com')->send(new CoworkingMail($data));
 
         return back()->with('success', 'Votre demande de réservation a bien été envoyée ! Notre équipe vous contactera très bientôt.');
     }

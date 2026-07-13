@@ -24,7 +24,7 @@ class ContactController extends Controller
         ]);
 
         // Envoi de l'e-mail vers la boîte de contact de Sophos Congo
-        Mail::to('info@sophoscongo.com')->send(new ContactMail($data));
+        Mail::to('contact@sophoscongo.com')->send(new ContactMail($data));
 
         return back()->with('success', 'Message envoyé avec succès !');
     }

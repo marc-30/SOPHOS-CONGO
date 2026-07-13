@@ -145,7 +145,7 @@
                             <p style="margin:0 0 4px 0; color:#666666; font-size:12px;">
                                 <a href="tel:+242067768642" style="color:#2563EB; text-decoration:none;">+242 06 776 86 42</a>
                                 &nbsp;·&nbsp;
-                                <a href="mailto:info@sophoscongo.com" style="color:#2563EB; text-decoration:none;">info@sophoscongo.com</a>
+                                <a href="mailto:contact@sophoscongo.com" style="color:#2563EB; text-decoration:none;">contact@sophoscongo.com</a>
                             </p>
                             <p style="margin:20px 0 0 0; color:#333333; font-size:11px;">© {{ date('Y') }} Sophos Congo. Tous droits réservés.</p>
                         </td>

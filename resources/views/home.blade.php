@@ -55,7 +55,7 @@
                     </li>
                     <li>
                         <i class="fas fa-envelope-open-text"></i>
-                        <a href="mailto:Info@sophoscongo.com">Info@sophoscongo.com</a>
+                        <a href="mailto:contact@sophoscongo.com">contact@sophoscongo.com</a>
                     </li>
                 </ul>
             </div>
