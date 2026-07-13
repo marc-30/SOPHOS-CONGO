@@ -118,8 +118,8 @@
                         <div class="section-heading mb-60" id="lestudio">
                             <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
                                 data-duration="0.9" data-stagger="0.03">Cabinet de Transformation Digitale</h4>
-                            <h1 class="section-title" data-text-animation data-split="word" data-duration="1">Votre
-                                marque <br> mérite d'être vue, <span>reconnue et mémorisée. <br> On s'en charge.</span>
+                            <h1 class="section-title" data-text-animation data-split="word" data-duration="1">Nous
+                                transformons les défis numériques <br> <span>en opportunités de croissance.</span>
                             </h1>
                         </div>
                         <div class="about-exp-box fade-top">
@@ -141,10 +141,10 @@
                                 <div class="swiper-pagination"></div>
                             </div> -->
                             
-                                <p>Sophos Congo est un cabinet de transformation digitale et <br> d'intelligence
-                                    artificielle basé à Brazzaville. Nous accompagnons institutions et entreprises
-                                    dans leur transition numérique, avec des stratégies qui anticipent les
-                                    opportunités de demain.</p>
+                                <p>Nous accompagnons les entreprises dans leur transformation digitale <br> grâce à
+                                    des solutions innovantes, une stratégie adaptée et des technologies performantes
+                                    pour accélérer leur croissance, optimiser leurs processus et renforcer leur
+                                    compétitivité.</p>
                                 <!-- <div class="about-btn">
                                         <a href="about.html" class="cp-primary-btn">
                                             <span class="btn-text">
