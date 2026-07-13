@@ -18,7 +18,13 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     pkg-config \
     unzip \
-    && docker-php-ext-install pdo_sqlite mbstring zip \
+    && docker-php-ext-install pdo_sqlite mbstring zip opcache \
+    && { \
+        echo 'opcache.enable=1'; \
+        echo 'opcache.memory_consumption=128'; \
+        echo 'opcache.max_accelerated_files=10000'; \
+        echo 'opcache.validate_timestamps=0'; \
+    } > /usr/local/etc/php/conf.d/opcache-recommended.ini \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -36,4 +42,10 @@ RUN composer dump-autoload --optimize --no-dev \
     && chmod -R 775 storage bootstrap/cache
 
 EXPOSE 10000
-CMD php artisan migrate --force && php artisan serve --host 0.0.0.0 --port ${PORT:-10000}
+# config:cache et view:cache evitent de reparser le .env et de recompiler les
+# vues Blade a chaque requete (route:cache impossible : routes/web.php utilise
+# des closures, non serialisables par Laravel).
+CMD php artisan config:cache \
+    && php artisan view:cache \
+    && php artisan migrate --force \
+    && php artisan serve --host 0.0.0.0 --port ${PORT:-10000}
