@@ -71,18 +71,22 @@
     <!-- /.mobile-side-menu -->
     <div class="mobile-side-menu-overlay"></div>
 
-    {{-- Bannière d'en-tête de la page Services --}}
-    <section class="page-header" data-background="assets/img/service2.jpg">
+    {{-- Bannière d'en-tête de la page Services (image seule) --}}
+    <section class="page-header" data-background="assets/img/service2.jpg" style="height: 320px;">
         <div class="overlay"></div>
+    </section>
+    <!-- ./ page-header -->
+
+    {{-- Titre de la page, place entre la banniere et la grille des services --}}
+    <section class="page-header">
         <div class="container">
-            <div class="page-header-content text-center">
+            <div class="page-header-content text-center" style="padding: 60px 0 40px 0;">
                 <h1 class="title">Nos Services de Transformation Digitale</h1>
                 <h4 class="sub-title"><a class="home" href="/">Accueil </a><span></span><a
                         class="inner-page" href="/services"> Services </a></h4>
             </div>
         </div>
     </section>
-    <!-- ./ page-header -->
 
     {{-- Grille détaillée des 8 offres de services du cabinet --}}
     <section class="service-section-3 pt-150 pb-150">
