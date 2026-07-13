@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     libsqlite3-dev \
     libzip-dev \
     zlib1g-dev \
+    libonig-dev \
     pkg-config \
     unzip \
     && docker-php-ext-install pdo_sqlite mbstring zip \
