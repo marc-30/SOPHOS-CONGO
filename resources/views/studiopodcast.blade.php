@@ -169,7 +169,24 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="swiper-slide">
+                        <div class="project-item project-item-2">
+                            <div class="project-thumb">
+                                <div class="overlay"></div>
+                                <div class="project-btn">
+
+                                </div>
+                                <div class="main-img scale" data-cursor-text="View Project">
+                                    <a href="#"><img src="assets/img/studio fond vert.jpg" alt="image"></a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="title"><a href="#" style="font-family: 'NewYork', 'sans-serif';" >Le Studio FOND VERT</a></h3>
+                                <span>1-6 PLACES AVEC LA RÉGIE + MONTAGE + RENDU 4K </span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

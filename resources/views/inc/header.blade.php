@@ -23,7 +23,7 @@
                              </li>
 
                              <li><a href="/contact">Contacts</a></li>
-                             <li><a href="/studiopodcast" style="font-family: 'NewYork', 'sans-serif';" ><span>Découvrez nos studios podcast</span></a></li>
+                             <li><a href="/studiopodcast"><span>Découvrez nos studios podcast</span></a></li>
                             <li><a href="/coworking">Coworking</a></li>
                          </ul>
                      </div>
