@@ -336,11 +336,11 @@
         var swiperProject = new Swiper(".project-carousel", {
             slidesPerView: 1,
             spaceBetween: 24,
-            grabcursor: true,
+            grabCursor: true,
             speed: 600,
             navigation: {
-                nextEl: '.project-top .swiper-prev',
-                prevEl: '.project-top .swiper-next',
+                nextEl: '.swiper-next-single',
+                prevEl: '.swiper-prev-single',
             },
             breakpoints: {
                 0: {

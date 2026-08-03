@@ -73,7 +73,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/carouselTicker.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}?v={{ filemtime(public_path('assets/css/main.css')) }}">
 
     {{-- Surcharge de style pour le titre du carrousel des sponsors (forcer le blanc) --}}
     <style>
@@ -208,7 +208,7 @@
     <script src="{{ asset('assets/js/vendor/jquery.carouselTicker.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/nice-select.js') }}"></script>
     <script src="{{ asset('assets/js/contact.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}?v={{ filemtime(public_path('assets/js/main.js')) }}"></script>
 </body>
 
 </html>

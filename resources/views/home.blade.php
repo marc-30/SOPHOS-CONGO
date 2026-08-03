@@ -304,11 +304,8 @@
                     <h2 class="section-title" data-text-animation data-split="word" data-duration="1">Des idées
                         audacieuses <br> <span>Des projets réussis </span></h2>
                 </div>
-                <div class="swiper-arrow">
-                    <div class="swiper-nav swiper-next"><i class="fa-regular fa-arrow-left"></i></div>
-                    <div class="swiper-nav swiper-prev"><i class="fa-regular fa-arrow-right"></i></div>
-                </div>
             </div>
+            <div class="project-carousel-wrap">
             <div class="project-carousel swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -316,7 +313,7 @@
                             <div class="project-thumb">
                                 <div class="overlay"></div>
                                 <div class="project-btn">
-                                   
+
                                 </div>
                                 <div class="main-img scale" data-cursor-text="View Project">
                                     <a href="#"><img src="assets/img/slide-travaux-realiser/SLIDE-1.jpg"
@@ -400,6 +397,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="carousel-side-nav carousel-side-nav-prev swiper-prev-single"><i class="fa-regular fa-arrow-left"></i></div>
+            <div class="carousel-side-nav carousel-side-nav-next swiper-next-single"><i class="fa-regular fa-arrow-right"></i></div>
             </div>
         </div>
     </section>

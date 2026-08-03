@@ -263,7 +263,7 @@
     <div class="mobile-side-menu-overlay"></div>
 
     {{-- Bannière d'en-tête de la page Coworking --}}
-    <section class="page-header" data-background="{{ asset('assets/img/BANNIERE-CONTACTER-NOUS.jpg') }}">
+    <section class="page-header" data-background="{{ asset('assets/img/SOPHOS-espace-Coworking.jpg') }}">
         <div class="overlay"></div>
         <div class="container">
             <div class="page-header-content text-center">

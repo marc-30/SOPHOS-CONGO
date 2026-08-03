@@ -73,7 +73,7 @@
     <div class="mobile-side-menu-overlay"></div>
 
     {{-- Bannière d'en-tête de la page Contact (image seule) --}}
-    <section class="page-header" data-background="assets/img/BANNIERE-CONTACTER-NOUS.jpg" style="height: 320px;">
+    <section class="page-header" data-background="assets/img/SOPHOS-contact.jpg" style="height: 320px;">
         <div class="overlay"></div>
     </section>
     <!-- ./ page-header -->

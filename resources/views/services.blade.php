@@ -72,7 +72,7 @@
     <div class="mobile-side-menu-overlay"></div>
 
     {{-- Bannière d'en-tête de la page Services (image seule) --}}
-    <section class="page-header" data-background="assets/img/service2.jpg" style="height: 320px;">
+    <section class="page-header" data-background="assets/img/SOPHOS-BANNER-SERVICE.jpg" style="height: 320px;">
         <div class="overlay"></div>
     </section>
     <!-- ./ page-header -->
