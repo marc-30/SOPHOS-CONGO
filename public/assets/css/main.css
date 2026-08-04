@@ -4260,7 +4260,7 @@ START: Header CSS
 }
 
 .project-carousel {
-  max-width: 850px;
+  max-width: 1100px;
   width: 100%;
   margin-left: 0;
   overflow: visible;
@@ -4305,19 +4305,19 @@ START: Header CSS
 }
 
 .project-item-2 .project-thumb {
-  height: 550px;
+  height: 650px;
   width: 100%;
   overflow: hidden;
   border-radius: 16px;
 }
 @media only screen and (max-width: 992px) {
   .project-item-2 .project-thumb {
-    height: 450px;
+    height: 500px;
   }
 }
 @media only screen and (max-width: 767px) {
   .project-item-2 .project-thumb {
-    height: 400px;
+    height: 420px;
   }
 }
 .project-item-2 .project-thumb .main-img {
@@ -4328,6 +4328,27 @@ START: Header CSS
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.thumb-mini-gallery {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+.thumb-mini-gallery .thumb-mini {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.5;
+  border: 2px solid transparent;
+  transition: all 0.25s ease-in-out;
+}
+.thumb-mini-gallery .thumb-mini:hover,
+.thumb-mini-gallery .thumb-mini.active {
+  opacity: 1;
+  border-color: var(--cp-color-theme-primary);
 }
 
 .project-details-img {
@@ -4993,6 +5014,47 @@ START: Header CSS
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.auto-slideshow {
+  position: relative;
+}
+.auto-slideshow .slide-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+.auto-slideshow .slide-fade.active {
+  opacity: 1;
+}
+
+.service-item-2.has-poster {
+  padding: 0;
+  height: auto;
+}
+.service-item-2.has-poster .slideshow-poster {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--cp-color-bg-1);
+}
+.service-item-2.has-poster .slideshow-poster .slide-fade {
+  object-fit: contain;
+}
+.service-item-2.has-poster .service-content {
+  padding: 30px 50px 40px;
+}
+.service-item-2.has-poster:before {
+  display: none;
+}
+.service-item-2.has-poster:hover .service-content .title,
+.service-item-2.has-poster:hover .service-content .title a {
+  color: var(--cp-color-heading-primary);
+}
+.service-item-2.has-poster:hover .service-content p {
+  color: var(--cp-color-text-body);
 }
 .service-item-2:before {
   background-color: var(--cp-color-theme-primary);
@@ -6138,14 +6200,14 @@ START: Blog CSS
   overflow: hidden;
 }
 .page-header .overlay {
-  background-color: #001023;
+  background-color: transparent;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  opacity: 0.7;
+  opacity: 0;
 }
 .page-header .page-header-content {
   padding: 220px 0 120px 0;

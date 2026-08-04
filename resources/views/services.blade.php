@@ -77,34 +77,44 @@
     </section>
     <!-- ./ page-header -->
 
-    {{-- Titre de la page, place entre la banniere et la grille des services --}}
-    <section class="page-header">
-        <div class="container">
-            <div class="page-header-content text-center" style="padding: 60px 0 40px 0;">
-                <h1 class="title">Nos Services de Transformation Digitale</h1>
-                <h4 class="sub-title"><a class="home" href="/">Accueil </a><span></span><a
-                        class="inner-page" href="/services"> Services </a></h4>
-            </div>
-        </div>
-    </section>
-
     {{-- Grille détaillée des 8 offres de services du cabinet --}}
     <section class="service-section-3 pt-150 pb-150">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-04.png') }}" width="70" alt="service"></div>
-                        <div class="service-content">
-                            <h3 class="title"><a href="#">TRANSFORMATION DIGITALE <span>& INTELLIGENCE ARTIFICIELLE</span></a></h3>
-                            <p>Marketing digital, développement web & mobile, UX/UI, intégration de solutions d'IA et vidéo marketing IA générative.</p>
+                    @php
+                        $poster1 = file_exists(public_path('assets/img/service/01.jpg')) ? asset('assets/img/service/01.jpg')
+                            : (file_exists(public_path('assets/img/service/01.png')) ? asset('assets/img/service/01.png') : null);
+                        $poster2 = file_exists(public_path('assets/img/service/01-2.jpg')) ? asset('assets/img/service/01-2.jpg')
+                            : (file_exists(public_path('assets/img/service/01-2.png')) ? asset('assets/img/service/01-2.png') : null);
+                    @endphp
+                    @if($poster1)
+                        <div class="service-item-2 service-item-3 has-poster">
+                            <div class="auto-slideshow slideshow-poster">
+                                <img src="{{ $poster1 }}" alt="Transformation Digitale & IA" class="slide-fade active">
+                                @if($poster2)
+                                    <img src="{{ $poster2 }}" alt="Transformation Digitale & IA" class="slide-fade">
+                                @endif
+                            </div>
+                            <div class="service-content">
+                                <h3 class="title"><a href="#">TRANSFORMATION DIGITALE <span>& INTELLIGENCE ARTIFICIELLE</span></a></h3>
+                                <p>Marketing digital, développement web & mobile, UX/UI, intégration de solutions d'IA et vidéo marketing IA générative.</p>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="service-item-2 service-item-3">
+                            <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-04.png') }}" width="70" alt="service"></div>
+                            <div class="service-content">
+                                <h3 class="title"><a href="#">TRANSFORMATION DIGITALE <span>& INTELLIGENCE ARTIFICIELLE</span></a></h3>
+                                <p>Marketing digital, développement web & mobile, UX/UI, intégration de solutions d'IA et vidéo marketing IA générative.</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
 
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-07.png') }}" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/02.png')) ? asset('assets/img/service/02.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-07.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
                             <h3 class="title"><a href="#">Consulting</a></h3>
                             <p>Conseil stratégique en communication et transformation, <br> veille sectorielle et
@@ -114,7 +124,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-01.png') }}" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/03.png')) ? asset('assets/img/service/03.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-01.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
                             <h3 class="title"><a href="#">Stratégie <span>de Communication</span></a></h3>
                             <p>Audit de communication, diagnostic de marque, <br> élaboration de stratégies 360° et
@@ -124,7 +134,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-02.png') }}" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/04.png')) ? asset('assets/img/service/04.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-02.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
                             <h3 class="title"><a href="#">Communication <span>Institutionnelle & Corporate</span></a>
                             </h3>
@@ -135,7 +145,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-03.png') }}" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/05.png')) ? asset('assets/img/service/05.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-03.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
                             <h3 class="title"><a href="#">Nation Branding <span>& Marketing Territorial</span></a></h3>
                             <p>Stratégie d'attractivité territoriale, promotion <br> des investissements et
@@ -146,7 +156,7 @@
                 
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-05.png') }}" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/06.png')) ? asset('assets/img/service/06.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-05.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
                             <h3 class="title"><a href="#">CRÉATION DE CONTENUS <span>& DE MARQUE</span></a></h3>
                             <p>Identité visuelle, chartes graphiques, production vidéo et podcast, photographie, copywriting et personal branding.</p>
@@ -155,7 +165,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-06.png') }}" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/07.png')) ? asset('assets/img/service/07.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-06.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
                             <h3 class="title"><a href="#">FORMATION <span>PROFESSIONNELLE</span></a></h3>
                             <p>Programmes de formation en communication, marketing digital, IA appliquée et storytelling, en présentiel ou en intra-entreprise.</p>
@@ -165,7 +175,7 @@
                 
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-08.png') }}" width="70" alt="service"></div>
+                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/08.png')) ? asset('assets/img/service/08.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-08.png') }}" width="70" alt="service"></div>
                         <div class="service-content">
                             <h3 class="title"><a href="/coworking">Sophos <span>Spaces</span></a></h3>
                             <p>Studio média & podcast, salle de réunion, salle de formation et espace coworking, au cœur de Brazzaville.</p>
@@ -232,6 +242,20 @@
         </div>
     </section>
     <!-- ./ skill-section -->
+
+{{-- Script : fait défiler automatiquement les icônes multi-images (ex: Transformation Digitale & IA) toutes les 4 secondes --}}
+<script>
+document.querySelectorAll('.auto-slideshow').forEach(function (wrap) {
+    var slides = wrap.querySelectorAll('.slide-fade');
+    if (slides.length < 2) return;
+    var idx = 0;
+    setInterval(function () {
+        slides[idx].classList.remove('active');
+        idx = (idx + 1) % slides.length;
+        slides[idx].classList.add('active');
+    }, 4000);
+});
+</script>
 
 {{-- Bloc d'appel à l'action pour la réservation de l'espace coworking (footer commun) --}}
 @include('inc.coworking-cta')

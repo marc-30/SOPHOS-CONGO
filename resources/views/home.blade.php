@@ -109,6 +109,12 @@
     </div>
     <!-- ./ running-text -->
 
+    {{-- Bannière d'en-tête de la section Cabinet (image seule) --}}
+    <section class="page-header" data-background="assets/img/SOPHOS BANNER.png" style="height: 320px;">
+        <div class="overlay"></div>
+    </section>
+    <!-- ./ page-header -->
+
     {{-- Section "Le Studio" : présentation du cabinet Sophos Congo --}}
     <section class="about-section pt-150 pb-150">
         <div class="container">

@@ -263,15 +263,72 @@
     <div class="mobile-side-menu-overlay"></div>
 
     {{-- Bannière d'en-tête de la page Coworking --}}
-    <section class="page-header" data-background="{{ asset('assets/img/SOPHOS-espace-Coworking.jpg') }}">
+    <section class="page-header" data-background="{{ asset('assets/img/SOPHOS-espace-Coworking.jpg') }}" style="height: 320px;">
         <div class="overlay"></div>
+    </section>
+
+    {{-- Carrousel présentant les espaces disponibles à la location --}}
+    <section class="project-section pt-150 pb-80 overflow-hidden">
         <div class="container">
-            <div class="page-header-content text-center">
-                <h1 class="title">Espace <span>Coworking</span></h1>
-                <h4 class="sub-title">
-                    <a class="home" href="/">Accueil</a><span></span>
-                    <a class="inner-page" href="#">Réservation</a>
-                </h4>
+            <div class="project-top heading-space">
+                <div class="section-heading mb-0">
+                    <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                        data-duration="0.9" data-stagger="0.03">Découvrez</h4>
+                    <h2 class="section-title" data-text-animation data-split="word" data-duration="1">Nos espaces <br> <span> de coworking </span></h2>
+                </div>
+            </div>
+            <div class="project-carousel-wrap">
+            <div class="project-carousel swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="project-item project-item-2">
+                            <div class="project-thumb">
+                                <div class="overlay"></div>
+                                <div class="project-btn"></div>
+                                <div class="main-img scale" data-cursor-text="View Project">
+                                    <a href="#"><img src="assets/img/espace coworking.jpg" alt="image"></a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="title"><a href="#">Salle Climatisée</a></h3>
+                                <span>DÈS 20 000 FCFA / 4H</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-item project-item-2">
+                            <div class="project-thumb">
+                                <div class="overlay"></div>
+                                <div class="project-btn"></div>
+                                <div class="main-img scale" data-cursor-text="View Project">
+                                    <a href="#"><img src="assets/img/bureaux privé.jpg" alt="image"></a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="title"><a href="#">Bureau Individuel Privé</a></h3>
+                                <span>DÈS 30 000 FCFA / 4H</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-item project-item-2">
+                            <div class="project-thumb">
+                                <div class="overlay"></div>
+                                <div class="project-btn"></div>
+                                <div class="main-img scale" data-cursor-text="View Project">
+                                    <a href="#"><img src="assets/img/salle de reunion.jpg" alt="image"></a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="title"><a href="#">Salle de Réunion Privée</a></h3>
+                                <span>DÈS 150 000 FCFA / 4H</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-side-nav carousel-side-nav-prev swiper-prev-single"><i class="fa-regular fa-arrow-left"></i></div>
+            <div class="carousel-side-nav carousel-side-nav-next swiper-next-single"><i class="fa-regular fa-arrow-right"></i></div>
             </div>
         </div>
     </section>

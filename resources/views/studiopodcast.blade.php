@@ -72,15 +72,8 @@
     <div class="mobile-side-menu-overlay"></div>
 
     {{-- Bannière d'en-tête de la page Studios Podcast --}}
-    <section class="page-header" data-background="assets/img/SOPHOS-espace-studio.jpg">
+    <section class="page-header" data-background="assets/img/SOPHOS-espace-studio.jpg" style="height: 320px;">
         <div class="overlay"></div>
-        <div class="container">
-            <div class="page-header-content text-center">
-                <h1 class="title">Nos Studios Podcast </h1>
-                <h4 class="sub-title"><a class="home" href="i/">Accueil </a><span></span><a
-                        class="inner-page" href="/studiopodcast"> Studios Podcast </a></h4>
-            </div>
-        </div>
     </section>
     <!-- ./ page-header -->
 
@@ -98,88 +91,66 @@
             <div class="project-carousel swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="project-item project-item-2">
+                        <div class="project-item project-item-2 thumb-swap">
                             <div class="project-thumb">
                                 <div class="overlay"></div>
                                 <div class="project-btn">
 
                                 </div>
                                 <div class="main-img scale" data-cursor-text="View Project">
-                                    <a href="#"><img src="assets/img/imgpodcast/IMAGESTUDIO2.jpg"
-                                            alt="image"></a>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="title"><a href="#" style="font-family: 'NewYork', 'sans-serif';" >Le Studio ALPHA</a></h3>
-                                <span>1-6 PLACES AVEC LA RÉGIE + MONTAGE + RENDU 4K </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="project-item project-item-2">
-                            <div class="project-thumb">
-                                <div class="overlay"></div>
-                                <div class="project-btn">
-                                    
-                                </div>
-                                <div class="main-img scale" data-cursor-text="View Project">
-                                    <a href="#"><img src="assets/img/imgpodcast/IMAGE STUDIO3.jpg" alt="image"></a>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="title"><a href="#" style="font-family: 'NewYork', 'sans-serif';" >Le Studio OMEGA</a></h3>
-                                <span>1-3 PLACES AVEC LA RÉGIE + MONTAGE + RENDU 4K </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="project-item project-item-2">
-                            <div class="project-thumb">
-                                <div class="overlay"></div>
-                                <div class="project-btn">
-                                   
-                                </div>
-                                <div class="main-img scale" data-cursor-text="View Project">
-                                    <a href="#"><img src="assets/img/imgpodcast/IMAGE STUDIO6.jpg" alt="image"></a>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="title"><a href="#" style="font-family: 'NewYork', 'sans-serif';" >Le Studio ÉCLIPSE</a></h3>
-                                <span>1-6 PLACES AVEC LA RÉGIE + MONTAGE + RENDU 4K </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="project-item project-item-2">
-                            <div class="project-thumb">
-                                <div class="overlay"></div>
-                                <div class="project-btn">
-                                    
-                                </div>
-                                <div class="main-img scale" data-cursor-text="View Project">
-                                    <a href="#"><img src="assets/img/imgpodcast/IMAGE STUDIO8.jpg" alt="image"></a>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="title"><a href="#" style="font-family: 'NewYork', 'sans-serif';" >Le Studio MINI BUDGET</a></h3>
-                                <span>1-2 PLACES AVEC LA RÉGIE + MONTAGE + RENDU 4K </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="project-item project-item-2">
-                            <div class="project-thumb">
-                                <div class="overlay"></div>
-                                <div class="project-btn">
-
-                                </div>
-                                <div class="main-img scale" data-cursor-text="View Project">
-                                    <a href="#"><img src="assets/img/studio fond vert.jpg" alt="image"></a>
+                                    <img class="thumb-active-img" src="assets/img/studio fond vert.jpg" alt="image">
                                 </div>
                             </div>
                             <div class="project-content">
                                 <h3 class="title"><a href="#" style="font-family: 'NewYork', 'sans-serif';" >Le Studio FOND VERT</a></h3>
                                 <span>1-6 PLACES AVEC LA RÉGIE + MONTAGE + RENDU 4K </span>
+                                <div class="thumb-mini-gallery">
+                                    <img class="thumb-mini active" src="assets/img/studio fond vert.jpg" data-full="assets/img/studio fond vert.jpg" alt="miniature">
+                                    <img class="thumb-mini" src="assets/img/studio/studio-fond-vert.jpg" data-full="assets/img/studio/studio-fond-vert.jpg" alt="miniature">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-item project-item-2 thumb-swap">
+                            <div class="project-thumb">
+                                <div class="overlay"></div>
+                                <div class="project-btn">
+
+                                </div>
+                                <div class="main-img scale" data-cursor-text="View Project">
+                                    <img class="thumb-active-img" src="assets/img/studio/studio-cosy 2.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="title"><a href="#" style="font-family: 'NewYork', 'sans-serif';" >Le Studio COSY</a></h3>
+                                <span>2 PLACES AVEC LA RÉGIE + MONTAGE + RENDU 4K </span>
+                                <div class="thumb-mini-gallery">
+                                    <img class="thumb-mini active" src="assets/img/studio/studio-cosy 2.jpg" data-full="assets/img/studio/studio-cosy 2.jpg" alt="miniature">
+                                    <img class="thumb-mini" src="assets/img/studio/studio-Cosy.jpg" data-full="assets/img/studio/studio-Cosy.jpg" alt="miniature">
+                                    <img class="thumb-mini" src="assets/img/studio/stu-cosy 3.jpg" data-full="assets/img/studio/stu-cosy 3.jpg" alt="miniature">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-item project-item-2 thumb-swap">
+                            <div class="project-thumb">
+                                <div class="overlay"></div>
+                                <div class="project-btn">
+
+                                </div>
+                                <div class="main-img scale" data-cursor-text="View Project">
+                                    <img class="thumb-active-img" src="assets/img/studio/studio-premium 1.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="title"><a href="#" style="font-family: 'NewYork', 'sans-serif';" >Le Studio PREMIUM</a></h3>
+                                <span>4 PLACES AVEC LA RÉGIE + MONTAGE + RENDU 4K </span>
+                                <div class="thumb-mini-gallery">
+                                    <img class="thumb-mini active" src="assets/img/studio/studio-premium 1.jpg" data-full="assets/img/studio/studio-premium 1.jpg" alt="miniature">
+                                    <img class="thumb-mini" src="assets/img/studio/stu-premium.jpg" data-full="assets/img/studio/stu-premium.jpg" alt="miniature">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -430,6 +401,21 @@
                                 </div> 
                             </div>
                         </div> -->
+
+{{-- Script : au survol d'une miniature, change l'image principale du studio correspondant --}}
+<script>
+document.querySelectorAll('.thumb-swap').forEach(function (item) {
+    var mainImg = item.querySelector('.thumb-active-img');
+    var minis = item.querySelectorAll('.thumb-mini');
+    minis.forEach(function (mini) {
+        mini.addEventListener('mouseenter', function () {
+            mainImg.src = mini.dataset.full;
+            minis.forEach(function (m) { m.classList.remove('active'); });
+            mini.classList.add('active');
+        });
+    });
+});
+</script>
 
 {{-- Bloc d'appel à l'action pour la réservation de l'espace coworking (footer commun) --}}
 @include('inc.coworking-cta')
