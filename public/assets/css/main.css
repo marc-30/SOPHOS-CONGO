@@ -5043,18 +5043,31 @@ START: Header CSS
 .service-item-2.has-poster .slideshow-poster .slide-fade {
   object-fit: contain;
 }
+.service-item-2.has-poster .poster-overlay-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 30px 28px 22px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+.service-item-2.has-poster .poster-overlay-title .title {
+  margin-bottom: 0;
+  font-size: 26px;
+}
 .service-item-2.has-poster .service-content {
-  padding: 30px 50px 40px;
+  padding: 0;
+}
+.service-item-2.has-poster .service-content:empty {
+  display: none;
 }
 .service-item-2.has-poster:before {
   display: none;
 }
-.service-item-2.has-poster:hover .service-content .title,
-.service-item-2.has-poster:hover .service-content .title a {
+.service-item-2.has-poster:hover .poster-overlay-title .title,
+.service-item-2.has-poster:hover .poster-overlay-title .title a {
   color: var(--cp-color-heading-primary);
-}
-.service-item-2.has-poster:hover .service-content p {
-  color: var(--cp-color-text-body);
 }
 .service-item-2:before {
   background-color: var(--cp-color-theme-primary);

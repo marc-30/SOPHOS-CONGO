@@ -85,20 +85,18 @@
                     @php
                         $poster1 = file_exists(public_path('assets/img/service/01.jpg')) ? asset('assets/img/service/01.jpg')
                             : (file_exists(public_path('assets/img/service/01.png')) ? asset('assets/img/service/01.png') : null);
-                        $poster2 = file_exists(public_path('assets/img/service/01-2.jpg')) ? asset('assets/img/service/01-2.jpg')
-                            : (file_exists(public_path('assets/img/service/01-2.png')) ? asset('assets/img/service/01-2.png') : null);
                     @endphp
                     @if($poster1)
                         <div class="service-item-2 service-item-3 has-poster">
                             <div class="auto-slideshow slideshow-poster">
                                 <img src="{{ $poster1 }}" alt="Transformation Digitale & IA" class="slide-fade active">
-                                @if($poster2)
-                                    <img src="{{ $poster2 }}" alt="Transformation Digitale & IA" class="slide-fade">
-                                @endif
+                                <div class="poster-overlay-title">
+                                    <h3 class="title"><a href="#">TRANSFORMATION DIGITALE <span>& INTELLIGENCE ARTIFICIELLE</span></a></h3>
+                                </div>
                             </div>
                             <div class="service-content">
-                                <h3 class="title"><a href="#">TRANSFORMATION DIGITALE <span>& INTELLIGENCE ARTIFICIELLE</span></a></h3>
-                                <p>Marketing digital, développement web & mobile, UX/UI, intégration de solutions d'IA et vidéo marketing IA générative.</p>
+                                {{-- Description masquée temporairement (le poster contient déjà son propre texte) : à réactiver plus tard --}}
+                                {{-- <p>Marketing digital, développement web & mobile, UX/UI, intégration de solutions d'IA et vidéo marketing IA générative.</p> --}}
                             </div>
                         </div>
                     @else
@@ -123,64 +121,160 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/03.png')) ? asset('assets/img/service/03.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-01.png') }}" width="70" alt="service"></div>
-                        <div class="service-content">
-                            <h3 class="title"><a href="#">Stratégie <span>de Communication</span></a></h3>
-                            <p>Audit de communication, diagnostic de marque, <br> élaboration de stratégies 360° et
-                                <br> accompagnement des dirigeants et décideurs.</p>
+                    @php $poster03 = file_exists(public_path('assets/img/service/03.png')) ? asset('assets/img/service/03.png') : null; @endphp
+                    @if($poster03)
+                        <div class="service-item-2 service-item-3 has-poster">
+                            <div class="auto-slideshow slideshow-poster">
+                                <img src="{{ $poster03 }}" alt="Stratégie de Communication" class="slide-fade active">
+                                <div class="poster-overlay-title">
+                                    <h3 class="title"><a href="#">Stratégie <span>de Communication</span></a></h3>
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <p>Audit de communication, diagnostic de marque, <br> élaboration de stratégies 360° et
+                                    <br> accompagnement des dirigeants et décideurs.</p>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="service-item-2 service-item-3">
+                            <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-01.png') }}" width="70" alt="service"></div>
+                            <div class="service-content">
+                                <h3 class="title"><a href="#">Stratégie <span>de Communication</span></a></h3>
+                                <p>Audit de communication, diagnostic de marque, <br> élaboration de stratégies 360° et
+                                    <br> accompagnement des dirigeants et décideurs.</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/04.png')) ? asset('assets/img/service/04.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-02.png') }}" width="70" alt="service"></div>
-                        <div class="service-content">
-                            <h3 class="title"><a href="#">Communication <span>Institutionnelle & Corporate</span></a>
-                            </h3>
-                            <p>Relations publiques et médias, communication <br> de crise et interne, valorisation
-                                <br> des réalisations et de l'impact des organisations.</p>
+                    @php $poster04 = file_exists(public_path('assets/img/service/04.png')) ? asset('assets/img/service/04.png') : null; @endphp
+                    @if($poster04)
+                        <div class="service-item-2 service-item-3 has-poster">
+                            <div class="auto-slideshow slideshow-poster">
+                                <img src="{{ $poster04 }}" alt="Communication Institutionnelle & Corporate" class="slide-fade active">
+                                <div class="poster-overlay-title">
+                                    <h3 class="title"><a href="#">Communication <span>Institutionnelle & Corporate</span></a></h3>
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <p>Relations publiques et médias, communication <br> de crise et interne, valorisation
+                                    <br> des réalisations et de l'impact des organisations.</p>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="service-item-2 service-item-3">
+                            <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-02.png') }}" width="70" alt="service"></div>
+                            <div class="service-content">
+                                <h3 class="title"><a href="#">Communication <span>Institutionnelle & Corporate</span></a>
+                                </h3>
+                                <p>Relations publiques et médias, communication <br> de crise et interne, valorisation
+                                    <br> des réalisations et de l'impact des organisations.</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/05.png')) ? asset('assets/img/service/05.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-03.png') }}" width="70" alt="service"></div>
-                        <div class="service-content">
-                            <h3 class="title"><a href="#">Nation Branding <span>& Marketing Territorial</span></a></h3>
-                            <p>Stratégie d'attractivité territoriale, promotion <br> des investissements et
-                                valorisation <br> du patrimoine culturel et des territoires.</p>
+                    @php $poster05 = file_exists(public_path('assets/img/service/05.png')) ? asset('assets/img/service/05.png') : null; @endphp
+                    @if($poster05)
+                        <div class="service-item-2 service-item-3 has-poster">
+                            <div class="auto-slideshow slideshow-poster">
+                                <img src="{{ $poster05 }}" alt="Nation Branding & Marketing Territorial" class="slide-fade active">
+                                <div class="poster-overlay-title">
+                                    <h3 class="title"><a href="#">Nation Branding <span>& Marketing Territorial</span></a></h3>
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <p>Stratégie d'attractivité territoriale, promotion <br> des investissements et
+                                    valorisation <br> du patrimoine culturel et des territoires.</p>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="service-item-2 service-item-3">
+                            <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-03.png') }}" width="70" alt="service"></div>
+                            <div class="service-content">
+                                <h3 class="title"><a href="#">Nation Branding <span>& Marketing Territorial</span></a></h3>
+                                <p>Stratégie d'attractivité territoriale, promotion <br> des investissements et
+                                    valorisation <br> du patrimoine culturel et des territoires.</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/06.png')) ? asset('assets/img/service/06.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-05.png') }}" width="70" alt="service"></div>
-                        <div class="service-content">
-                            <h3 class="title"><a href="#">CRÉATION DE CONTENUS <span>& DE MARQUE</span></a></h3>
-                            <p>Identité visuelle, chartes graphiques, production vidéo et podcast, photographie, copywriting et personal branding.</p>
+                    @php $poster06 = file_exists(public_path('assets/img/service/06.png')) ? asset('assets/img/service/06.png') : null; @endphp
+                    @if($poster06)
+                        <div class="service-item-2 service-item-3 has-poster">
+                            <div class="auto-slideshow slideshow-poster">
+                                <img src="{{ $poster06 }}" alt="Création de Contenus & de Marque" class="slide-fade active">
+                                <div class="poster-overlay-title">
+                                    <h3 class="title"><a href="#">CRÉATION DE CONTENUS <span>& DE MARQUE</span></a></h3>
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <p>Identité visuelle, chartes graphiques, production vidéo et podcast, photographie, copywriting et personal branding.</p>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="service-item-2 service-item-3">
+                            <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-05.png') }}" width="70" alt="service"></div>
+                            <div class="service-content">
+                                <h3 class="title"><a href="#">CRÉATION DE CONTENUS <span>& DE MARQUE</span></a></h3>
+                                <p>Identité visuelle, chartes graphiques, production vidéo et podcast, photographie, copywriting et personal branding.</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/07.png')) ? asset('assets/img/service/07.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-06.png') }}" width="70" alt="service"></div>
-                        <div class="service-content">
-                            <h3 class="title"><a href="#">FORMATION <span>PROFESSIONNELLE</span></a></h3>
-                            <p>Programmes de formation en communication, marketing digital, IA appliquée et storytelling, en présentiel ou en intra-entreprise.</p>
+                    @php
+                        $poster07 = file_exists(public_path('assets/img/service/07.jpg')) ? asset('assets/img/service/07.jpg')
+                            : (file_exists(public_path('assets/img/service/07.png')) ? asset('assets/img/service/07.png') : null);
+                    @endphp
+                    @if($poster07)
+                        <div class="service-item-2 service-item-3 has-poster">
+                            <div class="auto-slideshow slideshow-poster">
+                                <img src="{{ $poster07 }}" alt="Formation Professionnelle" class="slide-fade active">
+                                <div class="poster-overlay-title">
+                                    <h3 class="title"><a href="#">FORMATION <span>PROFESSIONNELLE</span></a></h3>
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <p>Programmes de formation en communication, marketing digital, IA appliquée et storytelling, en présentiel ou en intra-entreprise.</p>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="service-item-2 service-item-3">
+                            <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-06.png') }}" width="70" alt="service"></div>
+                            <div class="service-content">
+                                <h3 class="title"><a href="#">FORMATION <span>PROFESSIONNELLE</span></a></h3>
+                                <p>Programmes de formation en communication, marketing digital, IA appliquée et storytelling, en présentiel ou en intra-entreprise.</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/08.png')) ? asset('assets/img/service/08.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-08.png') }}" width="70" alt="service"></div>
-                        <div class="service-content">
-                            <h3 class="title"><a href="/coworking">Sophos <span>Spaces</span></a></h3>
-                            <p>Studio média & podcast, salle de réunion, salle de formation et espace coworking, au cœur de Brazzaville.</p>
+                    @php $poster08 = file_exists(public_path('assets/img/service/08.png')) ? asset('assets/img/service/08.png') : null; @endphp
+                    @if($poster08)
+                        <div class="service-item-2 service-item-3 has-poster">
+                            <div class="auto-slideshow slideshow-poster">
+                                <img src="{{ $poster08 }}" alt="Sophos Spaces" class="slide-fade active">
+                                <div class="poster-overlay-title">
+                                    <h3 class="title"><a href="/coworking">Sophos <span>Spaces</span></a></h3>
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <p>Studio média & podcast, salle de réunion, salle de formation et espace coworking, au cœur de Brazzaville.</p>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="service-item-2 service-item-3">
+                            <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-08.png') }}" width="70" alt="service"></div>
+                            <div class="service-content">
+                                <h3 class="title"><a href="/coworking">Sophos <span>Spaces</span></a></h3>
+                                <p>Studio média & podcast, salle de réunion, salle de formation et espace coworking, au cœur de Brazzaville.</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
