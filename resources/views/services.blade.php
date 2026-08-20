@@ -111,14 +111,30 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-item-2 service-item-3">
-                        <div class="icon"><img src="{{ file_exists(public_path('assets/img/service/02.png')) ? asset('assets/img/service/02.png') : asset('assets/img/services-icons/SERVIES - LES ICONS-07.png') }}" width="70" alt="service"></div>
-                        <div class="service-content">
-                            <h3 class="title"><a href="#">Consulting</a></h3>
-                            <p>Conseil stratégique en communication et transformation, <br> veille sectorielle et
-                                appui <br> à la préparation d'appels d'offres.</p>
+                    @php $poster02 = file_exists(public_path('assets/img/service/02.png')) ? asset('assets/img/service/02.png') : null; @endphp
+                    @if($poster02)
+                        <div class="service-item-2 service-item-3 has-poster">
+                            <div class="auto-slideshow slideshow-poster">
+                                <img src="{{ $poster02 }}" alt="Consulting" class="slide-fade active">
+                                <div class="poster-overlay-title">
+                                    <h3 class="title"><a href="#">Consulting</a></h3>
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <p>Conseil stratégique en communication et transformation, <br> veille sectorielle et
+                                    appui <br> à la préparation d'appels d'offres.</p>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="service-item-2 service-item-3">
+                            <div class="icon"><img src="{{ asset('assets/img/services-icons/SERVIES - LES ICONS-07.png') }}" width="70" alt="service"></div>
+                            <div class="service-content">
+                                <h3 class="title"><a href="#">Consulting</a></h3>
+                                <p>Conseil stratégique en communication et transformation, <br> veille sectorielle et
+                                    appui <br> à la préparation d'appels d'offres.</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
                 <div class="col-lg-4 col-md-6">
                     @php $poster03 = file_exists(public_path('assets/img/service/03.png')) ? asset('assets/img/service/03.png') : null; @endphp
