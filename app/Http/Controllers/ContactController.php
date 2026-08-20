@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
 use App\Models\Lead;
+use App\Services\MailtrapApiMailer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 use Throwable;
 
 // Contrôleur gérant le formulaire de contact du site
@@ -35,10 +35,15 @@ class ContactController extends Controller
             'message'  => $data['message'],
         ]);
 
-        // Envoi de l'e-mail en best-effort : le prospect est déjà enregistré en base,
+        // Envoi de l'e-mail via l'API Mailtrap, en best-effort : le prospect est déjà enregistré en base,
         // un souci d'envoi ne doit donc jamais empêcher la confirmation à l'utilisateur.
         try {
-            Mail::to('contact@sophoscongo.com')->send(new ContactMail($data));
+            (new MailtrapApiMailer())->send(
+                'contact@sophoscongo.com',
+                'Sophos Congo',
+                $data['subject'],
+                (new ContactMail($data))->render()
+            );
         } catch (Throwable $e) {
             Log::error('Échec envoi e-mail de contact : ' . $e->getMessage());
         }

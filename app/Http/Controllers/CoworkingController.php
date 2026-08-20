@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Mail\CoworkingClientMail;
 use App\Mail\CoworkingMail;
 use App\Models\Lead;
+use App\Services\MailtrapApiMailer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 use Throwable;
 
 // Contrôleur gérant l'affichage de la page coworking et les demandes de réservation d'espace
@@ -88,11 +88,22 @@ class CoworkingController extends Controller
             'prix'         => $data['prix'],
         ]);
 
-        // Envoi des e-mails (équipe + client) en best-effort : le prospect est déjà enregistré en base,
-        // un souci d'envoi (quota, SMTP down...) ne doit donc jamais empêcher la confirmation au client.
+        // Envoi des e-mails (équipe + client) via l'API Mailtrap, en best-effort : le prospect est déjà
+        // enregistré en base, un souci d'envoi ne doit donc jamais empêcher la confirmation au client.
         try {
-            Mail::to('reservation@sophoscongo.com')->send(new CoworkingMail($data));
-            Mail::to($data['email'])->send(new CoworkingClientMail($data));
+            $mailer = new MailtrapApiMailer();
+            $mailer->send(
+                'reservation@sophoscongo.com',
+                'Sophos Congo',
+                'Nouvelle demande de coworking — ' . $data['fullname'],
+                (new CoworkingMail($data))->render()
+            );
+            $mailer->send(
+                $data['email'],
+                $data['fullname'],
+                'Votre demande a bien été reçue — Sophos Congo',
+                (new CoworkingClientMail($data))->render()
+            );
         } catch (Throwable $e) {
             Log::error('Échec envoi e-mail de réservation coworking : ' . $e->getMessage());
         }

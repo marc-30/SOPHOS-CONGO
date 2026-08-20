@@ -23,6 +23,12 @@ return [
         'key' => env('RESEND_API_KEY'),
     ],
 
+    // Mailtrap Sending API : utilisé à la place du SMTP, qui refusait l'authentification sur ce compte
+    'mailtrap' => [
+        'token' => env('MAILTRAP_API_TOKEN'),
+        'url' => env('MAILTRAP_API_URL', 'https://send.api.mailtrap.io/api/send'),
+    ],
+
     'ses' => [
         'key' => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
