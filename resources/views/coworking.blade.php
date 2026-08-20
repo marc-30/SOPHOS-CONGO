@@ -119,6 +119,28 @@
             font-weight: 400;
             opacity: 0.5;
         }
+        .duration-grid-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .devis-btn {
+            width: 100%;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .devis-btn .duration-btn {
+            flex-direction: row;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 8px;
+        }
+        .devis-btn .duration-label {
+            font-size: 0.85rem;
+            text-transform: none;
+            letter-spacing: normal;
+            opacity: 0.85;
+            font-weight: 600;
+        }
 
         /* ══════════════════════════════════════
            SECTION TITLES
@@ -290,8 +312,8 @@
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3 class="title"><a href="#">Salle Climatisée</a></h3>
-                                <span>DÈS 20 000 FCFA / 4H</span>
+                                <h3 class="title"><a href="#">Coworking</a></h3>
+                                <span>DÈS 5 000 FCFA / JOUR</span>
                             </div>
                         </div>
                     </div>
@@ -305,8 +327,8 @@
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3 class="title"><a href="#">Bureau Individuel Privé</a></h3>
-                                <span>DÈS 30 000 FCFA / 4H</span>
+                                <h3 class="title"><a href="#">Bureau Privatif</a></h3>
+                                <span>SUR CONTRAT</span>
                             </div>
                         </div>
                     </div>
@@ -320,8 +342,8 @@
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3 class="title"><a href="#">Salle de Réunion Privée</a></h3>
-                                <span>DÈS 150 000 FCFA / 4H</span>
+                                <h3 class="title"><a href="#">Salle de Réunion</a></h3>
+                                <span>DÈS 25 000 FCFA / 4H</span>
                             </div>
                         </div>
                     </div>
@@ -339,26 +361,26 @@
             <div class="row gy-lg-0 gy-4">
                 <div class="col-lg-3 col-md-6">
                     <div class="contact-item">
-                        <div class="icon"><i class="fas fa-snowflake" style="font-size:2.5rem;color:#2563EB;"></i></div>
-                        <div class="contact-content"><span>Salles climatisées</span><h4 class="title">Dès 20 000 FCFA</h4></div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="contact-item">
-                        <div class="icon"><i class="fas fa-leaf" style="font-size:2.5rem;color:#2563EB;"></i></div>
-                        <div class="contact-content"><span>Terrasse aérée</span><h4 class="title">Dès 15 000 FCFA</h4></div>
+                        <div class="icon"><i class="fas fa-briefcase" style="font-size:2.5rem;color:#2563EB;"></i></div>
+                        <div class="contact-content"><span>Coworking</span><h4 class="title">Dès 5 000 FCFA</h4></div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="contact-item">
                         <div class="icon"><i class="fas fa-door-closed" style="font-size:2.5rem;color:#2563EB;"></i></div>
-                        <div class="contact-content"><span>Bureau privé</span><h4 class="title">Dès 30 000 FCFA</h4></div>
+                        <div class="contact-content"><span>Bureau privatif</span><h4 class="title">Sur contrat</h4></div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="contact-item">
                         <div class="icon"><i class="fas fa-users" style="font-size:2.5rem;color:#2563EB;"></i></div>
-                        <div class="contact-content"><span>Salle de réunion</span><h4 class="title">Dès 150 000 FCFA</h4></div>
+                        <div class="contact-content"><span>Salle de réunion</span><h4 class="title">Dès 25 000 FCFA</h4></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-chalkboard-teacher" style="font-size:2.5rem;color:#2563EB;"></i></div>
+                        <div class="contact-content"><span>Salle de formation</span><h4 class="title">Dès 50 000 FCFA</h4></div>
                     </div>
                 </div>
             </div>
@@ -413,7 +435,14 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <div class="form-item">
+                                            <input type="email" name="email" class="form-control"
+                                                placeholder="Votre adresse email *" value="{{ old('email') }}" required>
+                                            @error('email')<p class="invalid-feedback-custom">{{ $message }}</p>@enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         <div class="form-item">
                                             <div class="cs-wrapper" id="cs-commune">
                                                 <div class="cs-trigger" role="button" tabindex="0" aria-haspopup="listbox">
@@ -460,99 +489,99 @@
 
                                 {{-- ─── SECTION 2 : Formule + durée intégrée ─── --}}
                                 <p class="form-section-title" style="margin-top:20px;">Choisissez votre formule</p>
-                                <p style="font-size:0.82rem;opacity:0.45;margin-bottom:22px;margin-top:-12px;">Cliquez sur <strong style="opacity:0.8;">4h</strong> ou <strong style="opacity:0.8;">la nuit</strong> directement sur la formule souhaitée.</p>
+                                <p style="font-size:0.82rem;opacity:0.45;margin-bottom:22px;margin-top:-12px;">Cliquez directement sur la durée souhaitée pour la formule choisie.</p>
 
                                 @error('espace')<p class="invalid-feedback-custom mb-15">{{ $message }}</p>@enderror
                                 @error('duree')<p class="invalid-feedback-custom mb-15">{{ $message }}</p>@enderror
 
                                 <div class="row gy-4 mb-30" id="cards-container">
 
-                                    {{-- Card 1 --}}
+                                    {{-- Card 1 : Coworking --}}
                                     <div class="col-lg-6 col-md-6">
                                         <div class="coworking-card">
-                                            <div class="card-inner" data-espace="salle_climatisee">
-                                                <div class="card-icon-wrap"><i class="fas fa-snowflake"></i></div>
-                                                <h4>Salle climatisée</h4>
-                                                <p class="card-desc">1 place dans une salle climatisée, confortable et productive.</p>
-                                                <div class="duration-grid">
+                                            <div class="card-inner" data-espace="coworking">
+                                                <div class="card-icon-wrap"><i class="fas fa-briefcase"></i></div>
+                                                <h4>Coworking</h4>
+                                                <p class="card-desc">Environnement de travail moderne, calme et connecté, pensé pour entrepreneurs, freelances et jeunes entreprises.</p>
+                                                <div class="duration-grid duration-grid-3">
                                                     <button type="button" class="duration-btn"
-                                                        data-espace="salle_climatisee" data-duree="4h">
-                                                        <span class="duration-label">4 heures</span>
-                                                        <span class="duration-price">20 000 <small>FCFA</small></span>
+                                                        data-espace="coworking" data-duree="jour">
+                                                        <span class="duration-label">Journée</span>
+                                                        <span class="duration-price">5 000 <small>FCFA</small></span>
                                                     </button>
                                                     <button type="button" class="duration-btn"
-                                                        data-espace="salle_climatisee" data-duree="nuit">
-                                                        <span class="duration-label">Toute la nuit</span>
+                                                        data-espace="coworking" data-duree="semaine">
+                                                        <span class="duration-label">Semaine</span>
                                                         <span class="duration-price">30 000 <small>FCFA</small></span>
                                                     </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {{-- Card 2 --}}
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="coworking-card">
-                                            <div class="card-inner" data-espace="terrasse_aeree">
-                                                <div class="card-icon-wrap"><i class="fas fa-leaf"></i></div>
-                                                <h4>Terrasse aérée</h4>
-                                                <p class="card-desc">1 place sur une terrasse non-climatisée, idéale pour travailler au grand air.</p>
-                                                <div class="duration-grid">
                                                     <button type="button" class="duration-btn"
-                                                        data-espace="terrasse_aeree" data-duree="4h">
-                                                        <span class="duration-label">4 heures</span>
-                                                        <span class="duration-price">15 000 <small>FCFA</small></span>
-                                                    </button>
-                                                    <button type="button" class="duration-btn"
-                                                        data-espace="terrasse_aeree" data-duree="nuit">
-                                                        <span class="duration-label">Toute la nuit</span>
-                                                        <span class="duration-price">20 000 <small>FCFA</small></span>
+                                                        data-espace="coworking" data-duree="mois">
+                                                        <span class="duration-label">Mois</span>
+                                                        <span class="duration-price">100 000 <small>FCFA</small></span>
                                                     </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    {{-- Card 3 --}}
+                                    {{-- Card 2 : Bureau privatif (sur contrat, pas de tarif fixe) --}}
                                     <div class="col-lg-6 col-md-6">
                                         <div class="coworking-card">
                                             <div class="card-inner" data-espace="bureau_prive">
                                                 <div class="card-icon-wrap"><i class="fas fa-door-closed"></i></div>
-                                                <h4>Bureau individuel privé</h4>
-                                                <p class="card-desc">Bureau climatisé en solo pour travailler sans distraction.</p>
-                                                <div class="duration-grid">
+                                                <h4>Bureau privatif</h4>
+                                                <p class="card-desc">Espace exclusivement réservé à votre équipe, pour plus de confidentialité. Location sur contrat.</p>
+                                                <div class="devis-btn">
                                                     <button type="button" class="duration-btn"
-                                                        data-espace="bureau_prive" data-duree="4h">
-                                                        <span class="duration-label">4 heures</span>
-                                                        <span class="duration-price">30 000 <small>FCFA</small></span>
-                                                    </button>
-                                                    <button type="button" class="duration-btn"
-                                                        data-espace="bureau_prive" data-duree="nuit">
-                                                        <span class="duration-label">Toute la nuit</span>
-                                                        <span class="duration-price">40 000 <small>FCFA</small></span>
+                                                        data-espace="bureau_prive" data-duree="sur_devis">
+                                                        <i class="fas fa-file-signature"></i>
+                                                        <span class="duration-label">Nous contacter pour un devis</span>
                                                     </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    {{-- Card 4 --}}
+                                    {{-- Card 3 : Salle de réunion --}}
                                     <div class="col-lg-6 col-md-6">
                                         <div class="coworking-card">
                                             <div class="card-inner" data-espace="salle_reunion">
                                                 <div class="card-icon-wrap"><i class="fas fa-users"></i></div>
-                                                <h4>Salle de réunion privée</h4>
-                                                <p class="card-desc">Salle équipée et climatisée, de 2 à 15 personnes.</p>
+                                                <h4>Salle de réunion</h4>
+                                                <p class="card-desc">Idéale pour réunions professionnelles, rendez-vous clients, comités de direction ou présentations.</p>
                                                 <div class="duration-grid">
                                                     <button type="button" class="duration-btn"
                                                         data-espace="salle_reunion" data-duree="4h">
-                                                        <span class="duration-label">4 heures</span>
-                                                        <span class="duration-price">150 000 <small>FCFA</small></span>
+                                                        <span class="duration-label">Demi-journée (4h)</span>
+                                                        <span class="duration-price">25 000 <small>FCFA</small></span>
                                                     </button>
                                                     <button type="button" class="duration-btn"
-                                                        data-espace="salle_reunion" data-duree="nuit">
-                                                        <span class="duration-label">Toute la nuit</span>
-                                                        <span class="duration-price">250 000 <small>FCFA</small></span>
+                                                        data-espace="salle_reunion" data-duree="journee">
+                                                        <span class="duration-label">Journée</span>
+                                                        <span class="duration-price">50 000 <small>FCFA</small></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{-- Card 4 : Salle de formation --}}
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="coworking-card">
+                                            <div class="card-inner" data-espace="salle_formation">
+                                                <div class="card-icon-wrap"><i class="fas fa-chalkboard-teacher"></i></div>
+                                                <h4>Salle de formation</h4>
+                                                <p class="card-desc">Pour sessions de formation, ateliers, conférences ou séminaires. Capacité jusqu'à 60 personnes.</p>
+                                                <div class="duration-grid">
+                                                    <button type="button" class="duration-btn"
+                                                        data-espace="salle_formation" data-duree="4h">
+                                                        <span class="duration-label">Demi-journée (4h)</span>
+                                                        <span class="duration-price">50 000 <small>FCFA</small></span>
+                                                    </button>
+                                                    <button type="button" class="duration-btn"
+                                                        data-espace="salle_formation" data-duree="journee">
+                                                        <span class="duration-label">Journée</span>
+                                                        <span class="duration-price">90 000 <small>FCFA</small></span>
                                                     </button>
                                                 </div>
                                             </div>
@@ -648,15 +677,23 @@
         const summaryText  = document.getElementById('selection-text');
 
         const espaceLabels = {
-            salle_climatisee : 'Salle climatisée',
-            terrasse_aeree   : 'Terrasse aérée',
-            bureau_prive     : 'Bureau individuel privé',
-            salle_reunion    : 'Salle de réunion privée',
+            coworking       : 'Coworking',
+            bureau_prive    : 'Bureau privatif',
+            salle_reunion   : 'Salle de réunion',
+            salle_formation : 'Salle de formation',
         };
-        const dureeLabels = { '4h': '4 heures', 'nuit': 'Toute la nuit' };
+        const dureeLabels = {
+            jour      : 'À la journée',
+            semaine   : 'À la semaine',
+            mois      : 'Au mois',
+            '4h'      : 'Demi-journée (4h)',
+            journee   : 'Journée complète',
+            sur_devis : 'Sur devis',
+        };
 
         function updateSummary(espace, duree, prix) {
-            summaryText.innerHTML = 'Votre choix : <strong>' + espaceLabels[espace] + '</strong> — ' + dureeLabels[duree] + ' — <strong>' + prix + ' FCFA</strong>';
+            const prixText = prix ? ' — <strong>' + prix + ' FCFA</strong>' : ' — <strong>Sur devis</strong>';
+            summaryText.innerHTML = 'Votre choix : <strong>' + espaceLabels[espace] + '</strong> — ' + dureeLabels[duree] + prixText;
             summary.classList.add('visible');
         }
 
@@ -682,8 +719,9 @@
                 hiddenEspace.value = btn.dataset.espace;
                 hiddenDuree.value  = btn.dataset.duree;
 
-                // Afficher le résumé
-                const prix = btn.querySelector('.duration-price').childNodes[0].textContent.trim();
+                // Afficher le résumé (le bouton "sur devis" n'a pas de prix affiché)
+                const priceEl = btn.querySelector('.duration-price');
+                const prix = priceEl ? priceEl.childNodes[0].textContent.trim() : null;
                 updateSummary(btn.dataset.espace, btn.dataset.duree, prix);
             });
         });

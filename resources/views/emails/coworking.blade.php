@@ -63,6 +63,16 @@
                                     <td style="padding: 14px 0; border-bottom:1px solid #f5f5f5;">
                                         <table width="100%" cellpadding="0" cellspacing="0">
                                             <tr>
+                                                <td width="40%" style="color:#999999; font-size:13px;">Email</td>
+                                                <td style="color:#111111; font-size:14px; font-weight:600;"><a href="mailto:{{ $data['email'] }}" style="color:#2563EB; text-decoration:none;">{{ $data['email'] }}</a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 14px 0; border-bottom:1px solid #f5f5f5;">
+                                        <table width="100%" cellpadding="0" cellspacing="0">
+                                            <tr>
                                                 <td width="40%" style="color:#999999; font-size:13px;">Métier principal</td>
                                                 <td style="color:#111111; font-size:14px; font-weight:600;">{{ $data['metier'] }}</td>
                                             </tr>
