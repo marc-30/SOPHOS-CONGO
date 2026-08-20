@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CoworkingClientMail;
 use App\Mail\CoworkingMail;
+use App\Models\Lead;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Throwable;
 
 // Contrôleur gérant l'affichage de la page coworking et les demandes de réservation d'espace
 class CoworkingController extends Controller
@@ -70,8 +74,28 @@ class CoworkingController extends Controller
             $data['prix'] = $this->prices[$data['espace']][$data['duree']] . ' FCFA';
         }
 
-        // Envoi de la demande de réservation par e-mail à l'équipe Sophos Congo
-        Mail::to('reservation@sophoscongo.com')->send(new CoworkingMail($data));
+        // Conservation du prospect en base de données pour le suivi commercial
+        Lead::create([
+            'source'       => 'reservation',
+            'fullname'     => $data['fullname'],
+            'email'        => $data['email'],
+            'metier'       => $data['metier'],
+            'commune'      => $data['commune'],
+            'espace'       => $data['espace'],
+            'espace_label' => $data['espace_label'],
+            'duree'        => $data['duree'],
+            'duree_label'  => $data['duree_label'],
+            'prix'         => $data['prix'],
+        ]);
+
+        // Envoi des e-mails (équipe + client) en best-effort : le prospect est déjà enregistré en base,
+        // un souci d'envoi (quota, SMTP down...) ne doit donc jamais empêcher la confirmation au client.
+        try {
+            Mail::to('reservation@sophoscongo.com')->send(new CoworkingMail($data));
+            Mail::to($data['email'])->send(new CoworkingClientMail($data));
+        } catch (Throwable $e) {
+            Log::error('Échec envoi e-mail de réservation coworking : ' . $e->getMessage());
+        }
 
         return back()->with('success', 'Votre demande de réservation a bien été envoyée ! Notre équipe vous contactera très bientôt.');
     }
