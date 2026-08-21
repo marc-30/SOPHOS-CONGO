@@ -5,6 +5,10 @@
 
     RewriteEngine On
 
+    # Force HTTPS : redirige tout trafic HTTP non chiffre vers la version HTTPS du site
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -22,4 +26,16 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+</IfModule>
+
+# En-tetes de securite HTTP de base
+<IfModule mod_headers.c>
+    # Force le navigateur a toujours utiliser HTTPS pour ce domaine pendant 1 an
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # Empeche le site d'etre affiche dans une <iframe> sur un autre domaine (protection anti-clickjacking)
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # Empeche le navigateur de deviner le type d'un fichier different de son Content-Type declare
+    Header always set X-Content-Type-Options "nosniff"
+    # Limite les informations envoyees dans l'en-tete Referer lors de la navigation vers un autre site
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
