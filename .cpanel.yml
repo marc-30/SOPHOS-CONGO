@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - /bin/cp -R public/. /home/cp2827210p02/public_html/
+    - /bin/cp public/index.production.php /home/cp2827210p02/public_html/index.php
+    - composer install --no-dev --optimize-autoloader -d /home/cp2827210p02/repositories/SOPHOS-CONGO
+    - php /home/cp2827210p02/repositories/SOPHOS-CONGO/artisan migrate --force
+    - php /home/cp2827210p02/repositories/SOPHOS-CONGO/artisan config:cache
+    - php /home/cp2827210p02/repositories/SOPHOS-CONGO/artisan route:cache
+    - php /home/cp2827210p02/repositories/SOPHOS-CONGO/artisan view:cache
