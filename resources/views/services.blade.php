@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    @php $poster02 = file_exists(public_path('assets/img/service/02.png')) ? asset('assets/img/service/02.png') : null; @endphp
+                    @php $poster02 = file_exists(public_path('assets/img/service/02.jpg')) ? asset('assets/img/service/02.jpg') : (file_exists(public_path('assets/img/service/02.png')) ? asset('assets/img/service/02.png') : null); @endphp
                     @if($poster02)
                         <div class="service-item-2 service-item-3 has-poster">
                             <div class="auto-slideshow slideshow-poster">
@@ -137,7 +137,7 @@
                     @endif
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    @php $poster03 = file_exists(public_path('assets/img/service/03.png')) ? asset('assets/img/service/03.png') : null; @endphp
+                    @php $poster03 = file_exists(public_path('assets/img/service/03.jpg')) ? asset('assets/img/service/03.jpg') : (file_exists(public_path('assets/img/service/03.png')) ? asset('assets/img/service/03.png') : null); @endphp
                     @if($poster03)
                         <div class="service-item-2 service-item-3 has-poster">
                             <div class="auto-slideshow slideshow-poster">
@@ -163,7 +163,7 @@
                     @endif
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    @php $poster04 = file_exists(public_path('assets/img/service/04.png')) ? asset('assets/img/service/04.png') : null; @endphp
+                    @php $poster04 = file_exists(public_path('assets/img/service/04.jpg')) ? asset('assets/img/service/04.jpg') : (file_exists(public_path('assets/img/service/04.png')) ? asset('assets/img/service/04.png') : null); @endphp
                     @if($poster04)
                         <div class="service-item-2 service-item-3 has-poster">
                             <div class="auto-slideshow slideshow-poster">
@@ -190,7 +190,7 @@
                     @endif
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    @php $poster05 = file_exists(public_path('assets/img/service/05.png')) ? asset('assets/img/service/05.png') : null; @endphp
+                    @php $poster05 = file_exists(public_path('assets/img/service/05.jpg')) ? asset('assets/img/service/05.jpg') : (file_exists(public_path('assets/img/service/05.png')) ? asset('assets/img/service/05.png') : null); @endphp
                     @if($poster05)
                         <div class="service-item-2 service-item-3 has-poster">
                             <div class="auto-slideshow slideshow-poster">
@@ -217,7 +217,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    @php $poster06 = file_exists(public_path('assets/img/service/06.png')) ? asset('assets/img/service/06.png') : null; @endphp
+                    @php $poster06 = file_exists(public_path('assets/img/service/06.jpg')) ? asset('assets/img/service/06.jpg') : (file_exists(public_path('assets/img/service/06.png')) ? asset('assets/img/service/06.png') : null); @endphp
                     @if($poster06)
                         <div class="service-item-2 service-item-3 has-poster">
                             <div class="auto-slideshow slideshow-poster">
@@ -269,7 +269,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    @php $poster08 = file_exists(public_path('assets/img/service/08.png')) ? asset('assets/img/service/08.png') : null; @endphp
+                    @php $poster08 = file_exists(public_path('assets/img/service/08.jpg')) ? asset('assets/img/service/08.jpg') : (file_exists(public_path('assets/img/service/08.png')) ? asset('assets/img/service/08.png') : null); @endphp
                     @if($poster08)
                         <div class="service-item-2 service-item-3 has-poster">
                             <div class="auto-slideshow slideshow-poster">
